@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 //no clue why that's the case.
 public class GlobalFunctions
 {
-    public void LoadScene(string sceneName){
+    public static void LoadScene(string sceneName){
         //reset GlobalData Logic here?
         SceneManager.LoadScene(sceneName);
     }

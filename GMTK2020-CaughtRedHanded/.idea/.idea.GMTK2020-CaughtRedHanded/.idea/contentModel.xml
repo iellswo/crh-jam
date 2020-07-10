@@ -11,6 +11,7 @@
           <e p="GlobalFunctions.cs" t="Include" />
           <e p="Interfaces.cs" t="Include" />
           <e p="MenuFunctions.cs" t="Include" />
+          <e p="PlayerController.cs" t="Include" />
         </e>
       </e>
       <e p="GMTK2020-CaughtRedHanded.sln" t="IncludeFlat" />

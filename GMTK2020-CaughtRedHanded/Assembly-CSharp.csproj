@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\GlobalFunctions.cs" />
      <Compile Include="Assets\Scripts\Interfaces.cs" />
      <Compile Include="Assets\Scripts\MenuFunctions.cs" />
+     <Compile Include="Assets\Scripts\PlayerController.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/Mishaguji&apos;s Blackbox/RiderProjects/PF_Practice_Jam/crh-jam/GMTK2020-CaughtRedHanded/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

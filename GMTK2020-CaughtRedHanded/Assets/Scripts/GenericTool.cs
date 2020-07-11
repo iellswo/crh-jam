@@ -10,6 +10,8 @@ public class GenericTool : MonoBehaviour
     public ToolTray toolTray; //Tool bar
     public int slot; //Tool slot occupied by this tool
 
+    public ToolParticleController particleController;
+
     //Audio clips
     public AudioClip pickUpSound;
     public AudioClip putDownSound;
@@ -46,6 +48,10 @@ public class GenericTool : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 OnClickReaction();
+            }
+            else if (Input.GetMouseButtonUp(0))
+            {
+                StopUsingTool();
             }
         }
     }
@@ -101,6 +107,7 @@ public class GenericTool : MonoBehaviour
     {
         audioPlayer.PlayOneShot(useSound);
         //particleSys.Play();
+        if (particleController != null) particleController.BeginEmitting();
     }
 
     /// <summary>
@@ -110,6 +117,7 @@ public class GenericTool : MonoBehaviour
     {
         audioPlayer.Stop();
         //particleSys.Stop();
+        if (particleController != null) particleController.StopEmitting();
     }
 
     /// <summary>

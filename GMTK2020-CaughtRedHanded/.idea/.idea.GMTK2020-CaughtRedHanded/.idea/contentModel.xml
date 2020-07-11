@@ -8,6 +8,8 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Disasters" t="Include">
+            <e p="Alarm.cs" t="Include" />
+            <e p="AlarmLight.cs" t="Include" />
             <e p="BurningFuze.cs" t="Include" />
             <e p="DeadFuze.cs" t="Include" />
             <e p="EmptyFuze.cs" t="Include" />

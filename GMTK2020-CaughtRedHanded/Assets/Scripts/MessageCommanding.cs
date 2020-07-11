@@ -10,10 +10,15 @@ public class MessageCommanding : MonoBehaviour
     private GameObject messageBoxInstance;
     private bool messageIsVisible;
 
+    private Queue<BackloggedMessage> messageBacklog;
+
     // Start is called before the first frame update
     void Start()
     {
         messageIsVisible = false;
+        messageBacklog = new Queue<BackloggedMessage>();
+        ShowTutorialMessage(0);
+        ShowTutorialMessage(1);
     }
 
     /// <summary>
@@ -21,7 +26,7 @@ public class MessageCommanding : MonoBehaviour
     /// </summary>
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M) && (!messageIsVisible))
+        if (Input.GetKeyDown(KeyCode.M))
         {
             ShowRandomMessage();
         }
@@ -33,7 +38,11 @@ public class MessageCommanding : MonoBehaviour
     /// <param name="code">index number of the tutorial message</param>
     private void ShowTutorialMessage(int code)
     {
-        ShowMessage(GlobalTexts.GetTutorialMessagge(code), "Alright...");
+        string messageToShow = GlobalTexts.GetTutorialMessagge(code);
+        if (!messageIsVisible)
+            ShowMessage(messageToShow, "Alright...");
+        else
+            messageBacklog.Enqueue(new BackloggedMessage(messageToShow, true));
     }
 
     /// <summary>
@@ -41,7 +50,11 @@ public class MessageCommanding : MonoBehaviour
     /// </summary>
     private void ShowRandomMessage()
     {
-        ShowMessage(GlobalTexts.GetRandomMessage(), "Go away!");
+        string messageToShow = GlobalTexts.GetRandomMessage();
+        if (!messageIsVisible)
+            ShowMessage(messageToShow, "Go away!");
+        else
+            messageBacklog.Enqueue(new BackloggedMessage(messageToShow, false));
     }
 
     /// <summary>
@@ -51,16 +64,16 @@ public class MessageCommanding : MonoBehaviour
     /// <param name="buttonText">Text in the dismiss button</param>
     private void ShowMessage(string message, string buttonText)
     {
-        messageBoxInstance = Instantiate(messageBoxPrefab, new Vector3(0, 0, 0), Quaternion.identity);
-        messageBoxInstance.transform.parent = canvas.transform;
-        messageBoxInstance.transform.localPosition = new Vector3(0, 0, 0);
+            messageBoxInstance = Instantiate(messageBoxPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+            messageBoxInstance.transform.parent = canvas.transform;
+            messageBoxInstance.transform.localPosition = new Vector3(0, 0, 0);
 
-        MessageBox messageBoxData = messageBoxInstance.GetComponent<MessageBox>();
-        messageBoxData.messageCommander = this;
-        messageBoxData.message.text = message;
-        messageBoxData.buttonText.text = buttonText;
+            MessageBox messageBoxData = messageBoxInstance.GetComponent<MessageBox>();
+            messageBoxData.messageCommander = this;
+            messageBoxData.message.text = message;
+            messageBoxData.buttonText.text = buttonText;
 
-        messageIsVisible = true;
+            messageIsVisible = true;
     }
 
     /// <summary>
@@ -71,5 +84,28 @@ public class MessageCommanding : MonoBehaviour
         Destroy(messageBoxInstance);
         messageBoxInstance = null;
         messageIsVisible = false;
+
+        if (messageBacklog.Count > 0)
+        {
+            BackloggedMessage nextInQueue = messageBacklog.Peek();
+            if (nextInQueue.isTutorial)
+                ShowMessage(nextInQueue.text, "Alright...");
+            else
+                ShowMessage(nextInQueue.text, "Go away!");
+            messageBacklog.Dequeue();
+        }
+
+    }
+}
+
+class BackloggedMessage
+{
+    public string text;
+    public bool isTutorial;
+
+    public BackloggedMessage(string text, bool isTutorial)
+    {
+        this.text = text;
+        this.isTutorial = isTutorial;
     }
 }

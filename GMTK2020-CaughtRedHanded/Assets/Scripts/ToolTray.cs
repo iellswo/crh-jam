@@ -7,13 +7,35 @@ public class ToolTray : MonoBehaviour
     public GenericTool heldTool;
     public bool isHoldingTool;
 
+    private Animation anim;
+    private bool isUp;
+
     private float[] snapLocks = new float[7];
 
     // Start is called before the first frame update
     void Start()
     {
         isHoldingTool = false;
+        isUp = true;
         SetSnapLocks();
+        anim = GetComponent<Animation>();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (isUp)
+            {
+                anim.Play("Toobar-Hide");
+                isUp = false;
+            }
+            else
+            {
+                anim.Play("Toolbar-Unhide");
+                isUp = true;
+            }
+        }
     }
 
     /// <summary>

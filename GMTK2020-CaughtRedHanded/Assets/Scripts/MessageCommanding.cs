@@ -10,7 +10,20 @@ public class MessageCommanding : MonoBehaviour
     private GameObject messageBoxInstance;
     private bool messageIsVisible;
 
+    //Message backlogging
     private Queue<BackloggedMessage> messageBacklog;
+
+    //Tutorial stuff
+    /// <summary>
+    /// 0 - fire, 1 - hull breach, 2 - broken fuse, 3 - goose, 4 - vent, 5 - wire, 6 - alarm, 7 - coolant tower
+    /// </summary>
+    private bool[] awaitingFirstEvent = new bool[8];
+    private bool canThrowRandoms;
+
+    //Randomness
+    public float minInterlude = 15;
+    public float maxInterlude = 20;
+    private float interlude;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +32,12 @@ public class MessageCommanding : MonoBehaviour
         messageBacklog = new Queue<BackloggedMessage>();
         ShowTutorialMessage(0);
         ShowTutorialMessage(1);
+
+        canThrowRandoms = false;
+        for (int i = 0; i < 8; i++)
+            awaitingFirstEvent[i] = true;
+
+        interlude = Random.Range(minInterlude, maxInterlude);
     }
 
     /// <summary>
@@ -26,9 +45,96 @@ public class MessageCommanding : MonoBehaviour
     /// </summary>
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M))
+        if (!canThrowRandoms)
         {
-            ShowRandomMessage();
+            //Checking if first fire has appeared
+            if ((GlobalData.fireCount > 0) && (awaitingFirstEvent[0]))
+            {
+                ShowTutorialMessage(2);
+                awaitingFirstEvent[0] = false;
+            }
+
+            //Checking if first hull breach has appeared
+            if ((GlobalData.hullBreaches > 0) && (awaitingFirstEvent[1]))
+            {
+                ShowTutorialMessage(3);
+                awaitingFirstEvent[1] = false;
+            }
+
+            //Checking if broken fuse first appeared
+            if ((GlobalData.blownFuzes > 0) && (awaitingFirstEvent[2]))
+            {
+                ShowTutorialMessage(5);
+                awaitingFirstEvent[2] = false;
+            }
+
+            //GOOSE CODE HERE
+            awaitingFirstEvent[3] = false;
+            /*
+             * if ((GlobalData.geese > 0) && (awaitingFirstEvent[3]))
+             * {
+             *      ShowTutorialMessage(4);
+             *      awaitingFirstEvent[3] = false;
+             * }
+            */
+
+            //Checking if broken vent first appeared
+            if ((GlobalData.brokenFans > 0) && (awaitingFirstEvent[4]))
+            {
+                ShowTutorialMessage(7);
+                awaitingFirstEvent[4] = false;
+            }
+
+            //WIRE CODE HERE
+            awaitingFirstEvent[5] = false;
+            /*
+             * if ((GlobalData.cutWires > 0) && (awaitingFirstEvent[5]))
+             * {
+             *      ShowTutorialMessage(6);
+             *      awaitingFirstEvent[5] = false;
+             * }
+            */
+
+            //ALARM CODE HERE
+            awaitingFirstEvent[6] = false;
+            /*
+             * if ((GlobalData.alarms > 0) && (awaitingFirstEvent[6]))
+             * {
+             *      ShowTutorialMessage(8);
+             *      awaitingFirstEvent[6] = false;
+             * }
+            */
+
+            //COOLAN TOWER CODE HERE
+            awaitingFirstEvent[7] = false;
+            /*
+             * if ((GlobalData.coolantTower > 0) && (awaitingFirstEvent[7]))
+             * {
+             *      ShowTutorialMessage(9);
+             *      awaitingFirstEvent[7] = false;
+             * }
+            */
+
+            canThrowRandoms = CheckRandomMessagePermit();
+        }
+        else
+        {
+            //Random messages
+            if ((interlude <= 0) && (!messageIsVisible))
+            {
+                ShowRandomMessage();
+                interlude = Random.Range(minInterlude, maxInterlude);
+            }
+            else
+            {
+                interlude -= Time.deltaTime;
+            }
+
+            //Manual control (remove when cutting debug functions)
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                ShowRandomMessage();
+            }
         }
     }
 
@@ -77,7 +183,7 @@ public class MessageCommanding : MonoBehaviour
     }
 
     /// <summary>
-    /// Destroys the message window
+    /// Destroys the message window, and loads new message from a queue if needed
     /// </summary>
     public void DismissMessage()
     {
@@ -95,6 +201,17 @@ public class MessageCommanding : MonoBehaviour
             messageBacklog.Dequeue();
         }
 
+    }
+
+    /// <summary>
+    /// Checks if all tutorial messages have already been shown (i. e. if random messages can start popping up)
+    /// </summary>
+    private bool CheckRandomMessagePermit()
+    {
+        foreach (bool a in awaitingFirstEvent)
+            if (a)
+                return false;
+        return true;
     }
 }
 

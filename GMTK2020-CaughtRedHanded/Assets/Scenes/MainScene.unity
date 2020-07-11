@@ -1351,6 +1351,7 @@ MonoBehaviour:
   fanDamage: 30
   breachDamage: 5
   fuseDamage: 5
+  wireDamage: 20
 --- !u!1001 &1438770998
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -44,4 +44,13 @@ public class FuzeBreaker : MonoBehaviour
             GlobalData.blownFuzes++;
         }
     }
+
+    public void hideFuze(){
+        GetComponentInParent<SpriteRenderer>().enabled = false;
+    }
+
+    public void showFuze(){
+        GetComponentInParent<SpriteRenderer>().enabled = true;
+
+    }
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2110267132075663447}
   - component: {fileID: 2110267132075663444}
   - component: {fileID: 7389180425608215229}
+  - component: {fileID: -7747179425926054807}
   m_Layer: 0
   m_Name: DeadFuze
   m_TagString: Untagged
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: de9958aa3778bbd4f871209d468a0c8b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 69af23f2afcb8e24483eab8fc60ca075, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -126,3 +127,14 @@ MonoBehaviour:
   emptyFuze: {fileID: 327051181331286910, guid: 4d712b83ee5c1e940b40f90a30c9c60d,
     type: 3}
   fuzeBreaker: {fileID: 0}
+--- !u!210 &-7747179425926054807
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110267132075663445}
+  m_Enabled: 1
+  m_SortingLayerID: -1091654495
+  m_SortingLayer: 3
+  m_SortingOrder: 0

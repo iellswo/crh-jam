@@ -18,6 +18,7 @@ public class EmptyFuze : Problem
     public override void Repair(){
         //AudioSource.PlayClipAtPoint(RepairSound, transform.position);
         fuzeBreaker._break = null;
+        fuzeBreaker.showFuze();
         GlobalData.blownFuzes--;
         Destroy(gameObject);
     }

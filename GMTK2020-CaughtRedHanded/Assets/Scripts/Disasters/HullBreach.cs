@@ -5,7 +5,7 @@ using UnityEngine;
 public class HullBreach : Problem
 {
     private bool fading = false;
-
+    public Sprite taped;
     private float fade = 1;
     // Start is called before the first frame update
     void Start(){
@@ -31,7 +31,7 @@ public class HullBreach : Problem
 
     public override void Repair(){
         var rend = GetComponent<SpriteRenderer>();
-        rend.color = Color.green;
+        rend.sprite = taped;
         fading = true;
     }
 }

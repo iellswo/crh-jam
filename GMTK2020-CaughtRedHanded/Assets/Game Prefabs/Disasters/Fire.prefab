@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1696871421614907379}
   - component: {fileID: 1696871421614907378}
   - component: {fileID: 395254212151361955}
+  - component: {fileID: -5998887566038562095}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -48,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RepairSound: {fileID: 0}
-  SolutionCode: 
+  SolutionCode: extinguisher
 --- !u!198 &1696871421614907379
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -4867,6 +4868,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!58 &-5998887566038562095
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696871421614907377}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &5009446165045107808
 GameObject:
   m_ObjectHideFlags: 0

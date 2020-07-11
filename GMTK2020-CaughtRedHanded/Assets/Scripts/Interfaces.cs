@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,4 +16,10 @@ public abstract class Problem : MonoBehaviour
     public AudioClip RepairSound;
     public string SolutionCode;
     public abstract void Repair();
+
+    public void OnMouseDown(){
+            if (SolutionCode == GlobalData.activeTool){
+                Repair();
+            }
+    }
 }

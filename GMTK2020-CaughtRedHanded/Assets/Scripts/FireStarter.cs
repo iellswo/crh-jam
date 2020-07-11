@@ -8,7 +8,6 @@ public class FireStarter : MonoBehaviour
 
     public float maxInterlude;
 
-    public int maxFires;
 
     public GameObject hazard;
 
@@ -24,6 +23,7 @@ public class FireStarter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.F))
         {
             var location = new Vector3(Random.Range(_rect.xMin, _rect.xMax), Random.Range(_rect.yMin, _rect.yMax), 0);
@@ -31,7 +31,7 @@ public class FireStarter : MonoBehaviour
             GlobalData.fireCount++;
             _interlude = Random.Range(minInterlude, maxInterlude);
         }
-        else if (maxFires > GlobalData.fireCount && _interlude <= 0){
+        else if (GlobalData.maxFires > GlobalData.fireCount && _interlude <= 0){
             var location = new Vector3(Random.Range(_rect.xMin, _rect.xMax), Random.Range(_rect.yMin,_rect.yMax), 0);
             Instantiate(hazard , location, Quaternion.identity);
             GlobalData.fireCount++;

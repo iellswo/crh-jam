@@ -46,6 +46,7 @@ public class ToolTray : MonoBehaviour
     {
         isHoldingTool = true;
         heldTool = tool;
+        GlobalData.activeTool = tool.toolName;
     }
 
     /// <summary>
@@ -55,6 +56,7 @@ public class ToolTray : MonoBehaviour
     {
         isHoldingTool = false;
         heldTool = null;
+        GlobalData.activeTool = "";
     }
 
     /// <summary>

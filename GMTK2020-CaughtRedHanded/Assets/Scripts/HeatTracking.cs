@@ -17,6 +17,7 @@ public class HeatTracking : MonoBehaviour
     public int fanDamage = 30;
     public int breachDamage = 5;
     public int fuseDamage = 5;
+    public int wireDamage = 20;
     
     void Start()
     {
@@ -51,6 +52,7 @@ public class HeatTracking : MonoBehaviour
         heat += GlobalData.brokenFans * fanDamage;
         heat += GlobalData.hullBreaches * breachDamage;
         heat += GlobalData.blownFuzes * fuseDamage;
+        heat += GlobalData.cutWires * wireDamage;
         //Other issues should be added here to the count
         return heat;
     }

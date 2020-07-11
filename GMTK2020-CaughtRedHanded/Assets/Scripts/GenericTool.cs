@@ -15,7 +15,7 @@ public class GenericTool : MonoBehaviour
     public AudioClip useSound;
 
     private AudioSource audioPlayer;
-    private ParticleSystem particleSys;
+    //private ParticleSystem particleSys;
 
     private bool isPickedUp; //Whether the object is currently held by the player
     private int currentClickState; //What the LMB will do to the object when clicked; see CommandSwitch method for explanation
@@ -25,8 +25,8 @@ public class GenericTool : MonoBehaviour
     void Start()
     {
         audioPlayer = GetComponent<AudioSource>();
-        particleSys = GetComponent<ParticleSystem>();
-        particleSys.Stop();
+        //particleSys = GetComponent<ParticleSystem>();
+        //particleSys.Stop();
         isPickedUp = false;
         currentClickState = 1;
     }
@@ -69,7 +69,7 @@ public class GenericTool : MonoBehaviour
     {
         if (isPickedUp == false)
         {
-            //audioPlayer.PlayOneShot(pickUpSound);
+            audioPlayer.PlayOneShot(pickUpSound);
             isPickedUp = true;
             CommandSwitch(3);
             toolTray.SetHeldTool(this);
@@ -81,7 +81,7 @@ public class GenericTool : MonoBehaviour
     /// </summary>
     public void PutDownTool()
     {
-        //audioPlayer.PlayOneShot(putDownSound);
+        audioPlayer.PlayOneShot(putDownSound);
         isPickedUp = false;
         CommandSwitch(1);
         toolTray.UnsetHeldTool();
@@ -93,8 +93,8 @@ public class GenericTool : MonoBehaviour
     /// </summary>
     public void StartUsingTool()
     {
-        //audioPlayer.PlayOneShot(useSound);
-        particleSys.Play();
+        audioPlayer.PlayOneShot(useSound);
+        //particleSys.Play();
     }
 
     /// <summary>
@@ -102,8 +102,8 @@ public class GenericTool : MonoBehaviour
     /// </summary>
     public void StopUsingTool()
     {
-        //audioPlayer.Stop();
-        particleSys.Stop();
+        audioPlayer.Stop();
+        //particleSys.Stop();
     }
 
     /// <summary>
@@ -130,7 +130,6 @@ public class GenericTool : MonoBehaviour
     /// </summary>
     public void SnapToPosition()
     {
-        Debug.Log("slot: " + slot + "; snap lock: " + toolTray.GetSnapLock(slot) + "; return x: " + returnPosition.x);
         GetComponent<RectTransform>().localPosition = returnPosition;
     }
 

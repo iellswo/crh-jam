@@ -25,6 +25,7 @@
           <e p="GenericTool.cs" t="Include" />
           <e p="GlobalData.cs" t="Include" />
           <e p="GlobalFunctions.cs" t="Include" />
+          <e p="GlobalTexts.cs" t="Include" />
           <e p="HeatTracking.cs" t="Include" />
           <e p="Interfaces.cs" t="Include" />
           <e p="MenuFunctions.cs" t="Include" />

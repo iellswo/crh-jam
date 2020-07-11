@@ -35,5 +35,6 @@ public class BurningFuze : Problem
         var fuze = Instantiate(blownFuze, transform.position, Quaternion.identity);
         fuzeBreaker._break = fuze;
         fuze.fuzeBreaker = fuzeBreaker;
+        fuzeBreaker.hideFuze();
     }
 }

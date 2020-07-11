@@ -69,7 +69,7 @@ public class GenericTool : MonoBehaviour
     /// </summary>
     public void PickUpTool()
     {
-        if (isPickedUp == false)
+        if ((isPickedUp == false) && (toolTray.isHoldingTool == false))
         {
             audioPlayer.PlayOneShot(pickUpSound);
             isPickedUp = true;

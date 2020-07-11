@@ -9,7 +9,11 @@ public class GlobalData
 {
     public Vector2 StartPosition;
     public static int fireCount = 0;
-    public static int brokenFans = 0;
     public static int maxFires = 5;
+
+    public static int brokenFans = 0;
+
+    public static int hullBreaches = 0;
+    public static int maxBreaches = 10;
     public static string activeTool;
 }

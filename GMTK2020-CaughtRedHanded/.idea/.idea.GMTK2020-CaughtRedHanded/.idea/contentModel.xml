@@ -10,9 +10,11 @@
           <e p="Disasters" t="Include">
             <e p="FanSpark.cs" t="Include" />
             <e p="Fire.cs" t="Include" />
+            <e p="HullBreach.cs" t="Include" />
             <e p="Spawners" t="Include">
               <e p="FanBreaker.cs" t="Include" />
               <e p="FireStarter.cs" t="Include" />
+              <e p="HullBreacher.cs" t="Include" />
             </e>
           </e>
           <e p="FanScript.cs" t="Include" />

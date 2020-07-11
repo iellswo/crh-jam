@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class HeatTracking : MonoBehaviour
 {
     public Text heatText;
-    public Text activeIssuesText;
+    public Transform heatBar;
+    public Image heatColumn;
+    public float heatSpeed = 2f;
 
     private int heat; //The current amount of heat; player dies at 100
-    private int activeIssues; //The current number of disasters happening
 
     //Damages dealt by specific issue types:
     public int fireDamage = 10;
@@ -17,13 +18,13 @@ public class HeatTracking : MonoBehaviour
     void Start()
     {
         heat = 0;
-        activeIssues = 0;
     }
 
+    /// <summary>
+    /// Updates health bar and checks if the game should end
+    /// </summary>
     void Update()
     {
-        activeIssues = CalculateActiveIssues();
-        activeIssuesText.text = activeIssues + "";
 
         heat = CalculateCurrentHeat();
         if (heat >= 100)
@@ -31,22 +32,21 @@ public class HeatTracking : MonoBehaviour
             Cursor.visible = true;
             GlobalFunctions.LoadScene("VictoryScene");
         }
+        float heatNormal = heat / 100f;
+        Vector3 desiredScale = new Vector3(1f, heatNormal);
+        heatBar.localScale = Vector3.Lerp(heatBar.localScale, desiredScale, Time.deltaTime * heatSpeed);
+        heatColumn.color = new Color(heatColumn.color.r, heatColumn.color.g, heatColumn.color.b, (heatBar.localScale.y+0.2f));
         heatText.text = heat + "";
     }
 
     /// <summary>
-    /// Counts how many disasters are currently active
+    /// Calculates current heat as a sum of numbers of disasters of given type times damage value for that type
     /// </summary>
     /// <returns></returns>
-    private int CalculateActiveIssues()
-    {
-        int a = GlobalData.fireCount; //Other issues should be added here to the count
-        return a;
-    }
-
     private int CalculateCurrentHeat()
     {
         int a = GlobalData.fireCount * fireDamage; //Other issues should be added here to the count
         return a;
     }
+
 }

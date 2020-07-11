@@ -10,6 +10,7 @@
           <e p="Disasters" t="Include">
             <e p="Alarm.cs" t="Include" />
             <e p="AlarmLight.cs" t="Include" />
+            <e p="BrokenWire.cs" t="Include" />
             <e p="BurningFuze.cs" t="Include" />
             <e p="DeadFuze.cs" t="Include" />
             <e p="EmptyFuze.cs" t="Include" />
@@ -21,6 +22,7 @@
               <e p="FireStarter.cs" t="Include" />
               <e p="FuzeBreaker.cs" t="Include" />
               <e p="HullBreacher.cs" t="Include" />
+              <e p="WireCutter.cs" t="Include" />
             </e>
           </e>
           <e p="FanScript.cs" t="Include" />

@@ -17,6 +17,7 @@ public class GlobalData
     public static int maxBreaches = 10;
 
     public static int blownFuzes=0;
+    public static int cutWires = 0;
 
     public static string activeTool;
 }

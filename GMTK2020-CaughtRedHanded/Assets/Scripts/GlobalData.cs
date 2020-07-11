@@ -8,4 +8,5 @@ using UnityEngine;
 public class GlobalData
 {
     public Vector2 StartPosition;
+    public static int fireCount = 0;
 }

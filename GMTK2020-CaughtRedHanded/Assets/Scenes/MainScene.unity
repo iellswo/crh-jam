@@ -287,7 +287,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 531751c28633a764e8389f0ff2132862,
+      objectReference: {fileID: 21300000, guid: f20611745d5b8924b9862d8e4888e0b1,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7334ae6f566a0394dad320eeacb7a9fa, type: 3}
@@ -388,7 +388,7 @@ SpriteRenderer:
   m_Size: {x: 20.48, y: 20.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &302370431
@@ -1108,7 +1108,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0911429fb20d5264b9702811b6bacd07,
+      objectReference: {fileID: 21300000, guid: 60683d1694ad6234485b9e6f7a1edf0b,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7334ae6f566a0394dad320eeacb7a9fa, type: 3}
@@ -1323,6 +1323,7 @@ MonoBehaviour:
   fireDamage: 10
   fanDamage: 30
   breachDamage: 5
+  fuseDamage: 5
 --- !u!1001 &1438770998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1977,7 +1978,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d7cf3d1b5cceef54db3d5511e455bfbe,
+      objectReference: {fileID: 21300000, guid: 4feb8fd38ee8afe44be68cc16a810138,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7334ae6f566a0394dad320eeacb7a9fa, type: 3}
@@ -2313,7 +2314,7 @@ SpriteRenderer:
   m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &2020365154

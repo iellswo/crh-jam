@@ -18,6 +18,7 @@ public abstract class Problem : MonoBehaviour
     public abstract void Repair();
 
     public void OnMouseDown(){
+        Debug.Log("repairing with " + GlobalData.activeTool);
             if (SolutionCode == GlobalData.activeTool){
                 Repair();
             }

@@ -30,12 +30,14 @@
           <e p="GlobalData.cs" t="Include" />
           <e p="GlobalFunctions.cs" t="Include" />
           <e p="GlobalTexts.cs" t="Include" />
+          <e p="Goose.cs" t="Include" />
           <e p="HeatTracking.cs" t="Include" />
           <e p="Interfaces.cs" t="Include" />
           <e p="MenuFunctions.cs" t="Include" />
           <e p="MessageBox.cs" t="Include" />
           <e p="MessageCommanding.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
+          <e p="ToolParticleController.cs" t="Include" />
           <e p="ToolTray.cs" t="Include" />
         </e>
         <e p="Shaders" t="Include">

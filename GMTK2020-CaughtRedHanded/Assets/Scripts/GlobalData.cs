@@ -15,5 +15,8 @@ public class GlobalData
 
     public static int hullBreaches = 0;
     public static int maxBreaches = 10;
+
+    public static int blownFuzes=0;
+
     public static string activeTool;
 }

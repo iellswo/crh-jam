@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fire : Problem
+public class EmptyFuze : Problem
 {
+    public FuzeBreaker fuzeBreaker;
+
     // Start is called before the first frame update
     void Start(){
-        GlobalData.fireCount++;
     }
 
     // Update is called once per frame
@@ -14,16 +15,11 @@ public class Fire : Problem
     {
         
     }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(this.transform.position, 0.5f);
-    }
-
     public override void Repair(){
         //AudioSource.PlayClipAtPoint(RepairSound, transform.position);
-        GlobalData.fireCount--;
+        fuzeBreaker._break = null;
+        GlobalData.blownFuzes--;
         Destroy(gameObject);
     }
+
 }

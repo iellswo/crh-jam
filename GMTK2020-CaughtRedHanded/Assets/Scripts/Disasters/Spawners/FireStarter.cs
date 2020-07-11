@@ -45,6 +45,5 @@ public class FireStarter : MonoBehaviour
         var location = new Vector3(Random.Range(_rect.xMin+xBuffer, _rect.xMax-xBuffer), Random.Range(_rect.yMin+yBuffer, _rect.yMax+yBuffer), 0);
         // var location = new Vector3(_rect.xMax/2, _rect.yMax/2, 0);
         Instantiate(hazard, location, Quaternion.identity);
-        GlobalData.fireCount++;
     }
 }

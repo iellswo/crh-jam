@@ -8,12 +8,16 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Disasters" t="Include">
+            <e p="BurningFuze.cs" t="Include" />
+            <e p="DeadFuze.cs" t="Include" />
+            <e p="EmptyFuze.cs" t="Include" />
             <e p="FanSpark.cs" t="Include" />
             <e p="Fire.cs" t="Include" />
             <e p="HullBreach.cs" t="Include" />
             <e p="Spawners" t="Include">
               <e p="FanBreaker.cs" t="Include" />
               <e p="FireStarter.cs" t="Include" />
+              <e p="FuzeBreaker.cs" t="Include" />
               <e p="HullBreacher.cs" t="Include" />
             </e>
           </e>
@@ -24,6 +28,8 @@
           <e p="HeatTracking.cs" t="Include" />
           <e p="Interfaces.cs" t="Include" />
           <e p="MenuFunctions.cs" t="Include" />
+          <e p="MessageBox.cs" t="Include" />
+          <e p="MessageCommanding.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="ToolTray.cs" t="Include" />
         </e>

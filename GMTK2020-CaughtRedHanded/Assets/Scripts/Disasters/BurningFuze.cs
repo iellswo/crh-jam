@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fire : Problem
+public class BurningFuze : Problem
 {
+    public DeadFuze blownFuze;
+
+    public FuzeBreaker fuzeBreaker;
     // Start is called before the first frame update
     void Start(){
         GlobalData.fireCount++;
@@ -24,6 +27,13 @@ public class Fire : Problem
     public override void Repair(){
         //AudioSource.PlayClipAtPoint(RepairSound, transform.position);
         GlobalData.fireCount--;
+        SpawnDeadFuze();
         Destroy(gameObject);
+    }
+
+    private void SpawnDeadFuze(){
+        var fuze = Instantiate(blownFuze, transform.position, Quaternion.identity);
+        fuzeBreaker._break = fuze;
+        fuze.fuzeBreaker = fuzeBreaker;
     }
 }

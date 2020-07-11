@@ -9,3 +9,10 @@ public interface IActivate
 {
     void Activate();
 }
+
+public abstract class Problem : MonoBehaviour
+{
+    public AudioClip RepairSound;
+    public string SolutionCode;
+    public abstract void Repair();
+}

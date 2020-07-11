@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fire : MonoBehaviour
+public class Fire : Problem
 {
     // Start is called before the first frame update
     void Start()
@@ -20,5 +20,10 @@ public class Fire : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(this.transform.position, 0.5f);
+    }
+
+    public override void Repair(){
+        AudioSource.PlayClipAtPoint(RepairSound, transform.position);
+        Destroy(gameObject);
     }
 }

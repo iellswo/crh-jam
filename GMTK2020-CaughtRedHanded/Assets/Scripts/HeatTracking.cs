@@ -15,6 +15,7 @@ public class HeatTracking : MonoBehaviour
     //Damages dealt by specific issue types:
     public int fireDamage = 10;
     public int fanDamage = 30;
+    public int breachDamage = 5;
 
     void Start()
     {
@@ -44,10 +45,12 @@ public class HeatTracking : MonoBehaviour
     /// Calculates current heat as a sum of numbers of disasters of given type times damage value for that type
     /// </summary>
     /// <returns></returns>
-    private int CalculateCurrentHeat()
-    {
-        int a = GlobalData.fireCount * fireDamage + GlobalData.brokenFans * fanDamage; //Other issues should be added here to the count
-        return a;
+    private int CalculateCurrentHeat(){
+        int heat = GlobalData.fireCount * fireDamage;
+        heat += GlobalData.brokenFans * fanDamage;
+        heat += GlobalData.hullBreaches * breachDamage;
+        //Other issues should be added here to the count
+        return heat;
     }
 
 }

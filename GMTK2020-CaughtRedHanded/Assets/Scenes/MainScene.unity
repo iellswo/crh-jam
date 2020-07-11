@@ -263,6 +263,11 @@ PrefabInstance:
       propertyPath: useSound
       value: 
       objectReference: {fileID: 8300000, guid: d4a00d6209c922544ac49d92cd33b107, type: 3}
+    - target: {fileID: 7828335477259759161, guid: 7334ae6f566a0394dad320eeacb7a9fa,
+        type: 3}
+      propertyPath: toolName
+      value: wire
+      objectReference: {fileID: 0}
     - target: {fileID: 7828335477259759166, guid: 7334ae6f566a0394dad320eeacb7a9fa,
         type: 3}
       propertyPath: m_Color.r
@@ -940,6 +945,11 @@ PrefabInstance:
       propertyPath: useSound
       value: 
       objectReference: {fileID: 8300000, guid: d4a00d6209c922544ac49d92cd33b107, type: 3}
+    - target: {fileID: 7828335477259759161, guid: 7334ae6f566a0394dad320eeacb7a9fa,
+        type: 3}
+      propertyPath: toolName
+      value: smacker
+      objectReference: {fileID: 0}
     - target: {fileID: 7828335477259759166, guid: 7334ae6f566a0394dad320eeacb7a9fa,
         type: 3}
       propertyPath: m_Sprite
@@ -960,6 +970,75 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1583650690}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1259670188
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8948502057931599085, guid: f5b20a81362f658468166371c9a9538a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948502057931599085, guid: f5b20a81362f658468166371c9a9538a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948502057931599085, guid: f5b20a81362f658468166371c9a9538a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948502057931599085, guid: f5b20a81362f658468166371c9a9538a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948502057931599085, guid: f5b20a81362f658468166371c9a9538a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948502057931599085, guid: f5b20a81362f658468166371c9a9538a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948502057931599085, guid: f5b20a81362f658468166371c9a9538a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948502057931599085, guid: f5b20a81362f658468166371c9a9538a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948502057931599085, guid: f5b20a81362f658468166371c9a9538a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948502057931599085, guid: f5b20a81362f658468166371c9a9538a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948502057931599085, guid: f5b20a81362f658468166371c9a9538a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948502057931599086, guid: f5b20a81362f658468166371c9a9538a,
+        type: 3}
+      propertyPath: m_Name
+      value: Fan
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f5b20a81362f658468166371c9a9538a, type: 3}
 --- !u!1 &1283625935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,6 +1132,7 @@ MonoBehaviour:
   heatColumn: {fileID: 845341988}
   heatSpeed: 4
   fireDamage: 10
+  fanDamage: 30
 --- !u!1001 &1438770998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1195,6 +1275,11 @@ PrefabInstance:
       propertyPath: useSound
       value: 
       objectReference: {fileID: 8300000, guid: d4a00d6209c922544ac49d92cd33b107, type: 3}
+    - target: {fileID: 7828335477259759161, guid: 7334ae6f566a0394dad320eeacb7a9fa,
+        type: 3}
+      propertyPath: toolName
+      value: fuse
+      objectReference: {fileID: 0}
     - target: {fileID: 7828335477259759166, guid: 7334ae6f566a0394dad320eeacb7a9fa,
         type: 3}
       propertyPath: m_Color.r
@@ -1349,7 +1434,7 @@ PrefabInstance:
     - target: {fileID: 7828335477259759161, guid: 7334ae6f566a0394dad320eeacb7a9fa,
         type: 3}
       propertyPath: toolName
-      value: gen2
+      value: tape
       objectReference: {fileID: 0}
     - target: {fileID: 7828335477259759161, guid: 7334ae6f566a0394dad320eeacb7a9fa,
         type: 3}
@@ -1612,6 +1697,11 @@ PrefabInstance:
       propertyPath: useSound
       value: 
       objectReference: {fileID: 8300000, guid: d4a00d6209c922544ac49d92cd33b107, type: 3}
+    - target: {fileID: 7828335477259759161, guid: 7334ae6f566a0394dad320eeacb7a9fa,
+        type: 3}
+      propertyPath: toolName
+      value: screwdriver
+      objectReference: {fileID: 0}
     - target: {fileID: 7828335477259759166, guid: 7334ae6f566a0394dad320eeacb7a9fa,
         type: 3}
       propertyPath: m_Color.r

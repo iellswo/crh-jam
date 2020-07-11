@@ -28,6 +28,7 @@ public class FanSpark : Problem
         //AudioSource.PlayClipAtPoint(RepairSound, transform.position);
         fan.Spin();
         handler._break = null;
+        GlobalData.brokenFans--;
         Destroy(gameObject);
     }
 }

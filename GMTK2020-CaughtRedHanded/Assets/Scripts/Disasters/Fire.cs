@@ -24,6 +24,7 @@ public class Fire : Problem
 
     public override void Repair(){
         AudioSource.PlayClipAtPoint(RepairSound, transform.position);
+        GlobalData.fireCount--;
         Destroy(gameObject);
     }
 }

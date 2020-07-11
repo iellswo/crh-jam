@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GenericTool : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class GenericTool : MonoBehaviour
     public AudioClip useSound;
 
     private AudioSource audioPlayer;
+    private Image image;
     //private ParticleSystem particleSys;
 
     private bool isPickedUp; //Whether the object is currently held by the player
@@ -25,6 +27,7 @@ public class GenericTool : MonoBehaviour
     void Start()
     {
         audioPlayer = GetComponent<AudioSource>();
+        image = GetComponent<Image>();
         //particleSys = GetComponent<ParticleSystem>();
         //particleSys.Stop();
         isPickedUp = false;
@@ -33,7 +36,6 @@ public class GenericTool : MonoBehaviour
 
     private void Update()
     {
-
         if (isPickedUp)
         {
             //Following
@@ -73,6 +75,8 @@ public class GenericTool : MonoBehaviour
             isPickedUp = true;
             CommandSwitch(3);
             toolTray.SetHeldTool(this);
+            Cursor.visible = false;
+            image.raycastTarget = false;
         }
     }
 
@@ -86,6 +90,8 @@ public class GenericTool : MonoBehaviour
         CommandSwitch(1);
         toolTray.UnsetHeldTool();
         SnapToPosition();
+        Cursor.visible = true;
+        image.raycastTarget = true;
     }
 
     /// <summary>
@@ -123,6 +129,7 @@ public class GenericTool : MonoBehaviour
     public void CommandSwitch(int command)
     {
         currentClickState = command;
+        Debug.Log(toolName + " set to state: " + command);
     }
 
     /// <summary>

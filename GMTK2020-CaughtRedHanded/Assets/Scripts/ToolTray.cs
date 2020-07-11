@@ -64,6 +64,7 @@ public class ToolTray : MonoBehaviour
     /// </summary>
     public void SetPutDownState()
     {
+        Debug.Log("Entered Tray");
         if (isHoldingTool)
         {
             heldTool.CommandSwitch(3);
@@ -75,6 +76,7 @@ public class ToolTray : MonoBehaviour
     /// </summary>
     public void UnsetPutdownState()
     {
+        Debug.Log("Exited Tray");
         if (isHoldingTool)
             heldTool.CommandSwitch(2);
     }
@@ -101,7 +103,7 @@ public class ToolTray : MonoBehaviour
         snapLocks[4] = snapLockStep;
         snapLocks[5] = snapLockStep * 2;
         snapLocks[6] = snapLockStep * 3;
-
+        
         GenericTool[] toolsToLock = GetComponentsInChildren<GenericTool>();
         foreach (GenericTool a in toolsToLock)
         {

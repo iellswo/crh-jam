@@ -1023,6 +1023,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8948502057497152052, guid: f5b20a81362f658468166371c9a9538a,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.38679248
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948502057497152052, guid: f5b20a81362f658468166371c9a9538a,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.38679248
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948502057497152052, guid: f5b20a81362f658468166371c9a9538a,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.38679248
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948502057497152053, guid: f5b20a81362f658468166371c9a9538a,
+        type: 3}
+      propertyPath: fanSpeed
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948502057931599083, guid: f5b20a81362f658468166371c9a9538a,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.5660378
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948502057931599083, guid: f5b20a81362f658468166371c9a9538a,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.5660378
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948502057931599083, guid: f5b20a81362f658468166371c9a9538a,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.5660378
+      objectReference: {fileID: 0}
     - target: {fileID: 8948502057931599085, guid: f5b20a81362f658468166371c9a9538a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1327,6 +1362,11 @@ PrefabInstance:
       propertyPath: toolName
       value: fuse
       objectReference: {fileID: 0}
+    - target: {fileID: 7828335477259759161, guid: 7334ae6f566a0394dad320eeacb7a9fa,
+        type: 3}
+      propertyPath: mouseOffset
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7828335477259759166, guid: 7334ae6f566a0394dad320eeacb7a9fa,
         type: 3}
       propertyPath: m_Color.r
@@ -1554,6 +1594,11 @@ PrefabInstance:
       propertyPath: useSound
       value: 
       objectReference: {fileID: 8300000, guid: d4a00d6209c922544ac49d92cd33b107, type: 3}
+    - target: {fileID: 7828335477259759161, guid: 7334ae6f566a0394dad320eeacb7a9fa,
+        type: 3}
+      propertyPath: mouseOffset
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7828335477259759166, guid: 7334ae6f566a0394dad320eeacb7a9fa,
         type: 3}
       propertyPath: m_Color.r
@@ -1799,6 +1844,11 @@ PrefabInstance:
         type: 3}
       propertyPath: toolName
       value: screwdriver
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828335477259759161, guid: 7334ae6f566a0394dad320eeacb7a9fa,
+        type: 3}
+      propertyPath: mouseOffset
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7828335477259759166, guid: 7334ae6f566a0394dad320eeacb7a9fa,
         type: 3}

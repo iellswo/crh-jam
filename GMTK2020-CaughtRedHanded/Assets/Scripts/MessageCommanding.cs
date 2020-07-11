@@ -23,14 +23,44 @@ public class MessageCommanding : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.M) && (!messageIsVisible))
         {
-            messageBoxInstance = Instantiate(messageBoxPrefab, new Vector3(0, 0, 0), Quaternion.identity);
-            messageBoxInstance.transform.parent = canvas.transform;
-            messageBoxInstance.transform.localPosition = new Vector3(0, 0, 0);
-            MessageBox messageBoxData = messageBoxInstance.GetComponent<MessageBox>();
-            messageBoxData.messageCommander = this;
-
-            messageIsVisible = true;
+            ShowRandomMessage();
         }
+    }
+
+    /// <summary>
+    /// Displays a specific tutorial message
+    /// </summary>
+    /// <param name="code">index number of the tutorial message</param>
+    private void ShowTutorialMessage(int code)
+    {
+        ShowMessage(GlobalTexts.GetTutorialMessagge(code), "Alright...");
+    }
+
+    /// <summary>
+    /// Displays a random messagge
+    /// </summary>
+    private void ShowRandomMessage()
+    {
+        ShowMessage(GlobalTexts.GetRandomMessage(), "Go away!");
+    }
+
+    /// <summary>
+    /// Displays a given message with given button text
+    /// </summary>
+    /// <param name="message">Text in the text box</param>
+    /// <param name="buttonText">Text in the dismiss button</param>
+    private void ShowMessage(string message, string buttonText)
+    {
+        messageBoxInstance = Instantiate(messageBoxPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        messageBoxInstance.transform.parent = canvas.transform;
+        messageBoxInstance.transform.localPosition = new Vector3(0, 0, 0);
+
+        MessageBox messageBoxData = messageBoxInstance.GetComponent<MessageBox>();
+        messageBoxData.messageCommander = this;
+        messageBoxData.message.text = message;
+        messageBoxData.buttonText.text = buttonText;
+
+        messageIsVisible = true;
     }
 
     /// <summary>

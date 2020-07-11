@@ -24,21 +24,22 @@ public class FireStarter : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            var location = new Vector3(Random.Range(_rect.xMin, _rect.xMax), Random.Range(_rect.yMin, _rect.yMax), 0);
-            Instantiate(hazard, location, Quaternion.identity);
-            GlobalData.fireCount++;
-            _interlude = Random.Range(minInterlude, maxInterlude);
+        if (Input.GetKeyDown(KeyCode.F)){
+            SpawnFire();
         }
-        else if (GlobalData.maxFires > GlobalData.fireCount && _interlude <= 0){
-            var location = new Vector3(Random.Range(_rect.xMin, _rect.xMax), Random.Range(_rect.yMin,_rect.yMax), 0);
-            Instantiate(hazard , location, Quaternion.identity);
-            GlobalData.fireCount++;
+        
+        if (GlobalData.maxFires > GlobalData.fireCount && _interlude <= 0){
+            SpawnFire();
             _interlude = Random.Range(minInterlude, maxInterlude);
         }
         else{
             _interlude -= Time.deltaTime;
         }
+    }
+
+    private void SpawnFire(){
+        var location = new Vector3(Random.Range(_rect.xMin, _rect.xMax), Random.Range(_rect.yMin, _rect.yMax), 0);
+        Instantiate(hazard, location, Quaternion.identity);
+        GlobalData.fireCount++;
     }
 }

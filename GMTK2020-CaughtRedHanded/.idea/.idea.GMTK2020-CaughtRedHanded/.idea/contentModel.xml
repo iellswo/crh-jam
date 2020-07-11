@@ -8,9 +8,14 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Disasters" t="Include">
+            <e p="FanSpark.cs" t="Include" />
             <e p="Fire.cs" t="Include" />
+            <e p="Spawners" t="Include">
+              <e p="FanBreaker.cs" t="Include" />
+              <e p="FireStarter.cs" t="Include" />
+            </e>
           </e>
-          <e p="FireStarter.cs" t="Include" />
+          <e p="FanScript.cs" t="Include" />
           <e p="GenericTool.cs" t="Include" />
           <e p="GlobalData.cs" t="Include" />
           <e p="GlobalFunctions.cs" t="Include" />

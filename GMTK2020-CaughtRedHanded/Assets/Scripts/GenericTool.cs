@@ -49,6 +49,10 @@ public class GenericTool : MonoBehaviour
             {
                 OnClickReaction();
             }
+            else if (Input.GetMouseButtonUp(0))
+            {
+                StopUsingTool();
+            }
         }
     }
 

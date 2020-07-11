@@ -4,27 +4,36 @@ using UnityEngine;
 
 public class ToolParticleController : MonoBehaviour
 {
-    private ParticleSystem particleSystem;
+    private ParticleSystem particles;
+    private Vector3 mousePosition;
+    private float moveSpeed = 10f;
 
     // Start is called before the first frame update
     void Start()
     {
-        particleSystem = GetComponent<ParticleSystem>();
-        particleSystem.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+        particles = GetComponent<ParticleSystem>();
+        particles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
     }
-    
+
+    private void Update()
+    {
+        mousePosition = Input.mousePosition;
+        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        transform.position = Vector2.Lerp(transform.position, mousePosition, moveSpeed);
+    }
+
     public void BeginEmitting()
     {
-        particleSystem.Play(true);
+        particles.Play(true);
     }
 
     public void StopEmitting()
     {
-        particleSystem.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+        particles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
     }
 
     public void StopEmittingAndClear()
     {
-        particleSystem.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        particles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
     }
 }

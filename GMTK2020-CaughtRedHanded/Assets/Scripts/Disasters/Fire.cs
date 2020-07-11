@@ -21,6 +21,18 @@ public class Fire : Problem
         Gizmos.DrawWireSphere(this.transform.position, 0.5f);
     }
 
+    public void OnMouseEnter()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            Debug.Log("repairing with " + GlobalData.activeTool);
+            if (SolutionCode == GlobalData.activeTool)
+            {
+                Repair();
+            }
+        }
+    }
+
     public override void Repair(){
         //AudioSource.PlayClipAtPoint(RepairSound, transform.position);
         GlobalData.fireCount--;

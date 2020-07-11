@@ -17,6 +17,7 @@ public class FireStarter : MonoBehaviour
 
     // Start is called before the first frame update
     void Start(){
+        _interlude = Random.Range(minInterlude, maxInterlude);
         _rect = GetComponent<RectTransform>().rect;
     }
 

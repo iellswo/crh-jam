@@ -20,6 +20,7 @@ public class FanBreaker : MonoBehaviour
 
     // Start is called before the first frame update
     void Start(){
+        _interlude = Random.Range(minInterlude, maxInterlude);
         _fanScript = GetComponentInParent<FanScript>();
         _rect = GetComponent<RectTransform>().rect;
     }
@@ -31,8 +32,8 @@ public class FanBreaker : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.G)){
             BreakFan();
         }
-        else if (GlobalData.maxFires > GlobalData.fireCount && _interlude <= 0){
-
+        else if (_interlude <= 0){
+            BreakFan();
             _interlude = Random.Range(minInterlude, maxInterlude);
         }
         else{

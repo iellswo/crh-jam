@@ -44,9 +44,12 @@ TagManager:
   - name: Background
     uniqueID: 520240161
     locked: 0
-  - name: 
+  - name: Items
     uniqueID: 2990302873
     locked: 0
-  - name: New Layer
+  - name: Disasters
     uniqueID: 3203312801
+    locked: 0
+  - name: Particles
+    uniqueID: 3189423153
     locked: 0

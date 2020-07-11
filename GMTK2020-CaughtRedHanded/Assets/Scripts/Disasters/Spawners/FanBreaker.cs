@@ -42,11 +42,9 @@ public class FanBreaker : MonoBehaviour
 
     private void BreakFan(){
         if (_break == null){
-            var location = new Vector3(Random.Range(_rect.xMin, _rect.xMax), Random.Range(_rect.yMin, _rect.yMax), 0);
-            
-            _break = Instantiate(hazard, transform.position, Quaternion.identity);
-            _break.transform.parent = transform;
-            _break.transform.localPosition = location;
+            var location = new Vector3(Random.Range(_rect.xMin, _rect.xMax)/_rect.width, Random.Range(_rect.yMin, _rect.yMax)/_rect.height, 0);
+            _break = Instantiate(hazard, transform.position + location, Quaternion.identity);
+//            _break.transform.localPosition = location;
             var breakscript = _break.GetComponent<FanSpark>();
             breakscript.fan = _fanScript;
             _fanScript.Stop();

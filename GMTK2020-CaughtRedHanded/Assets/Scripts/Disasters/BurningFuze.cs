@@ -7,6 +7,8 @@ public class BurningFuze : Problem
     public DeadFuze blownFuze;
 
     public FuzeBreaker fuzeBreaker;
+
+    private bool underRepair = false;
     // Start is called before the first frame update
     void Start(){
         GlobalData.fireCount++;
@@ -37,6 +39,10 @@ public class BurningFuze : Problem
     }
 
     public override void Repair(){
+        if (underRepair){
+            return;
+        }
+        underRepair = true;
         //AudioSource.PlayClipAtPoint(RepairSound, transform.position);
         GlobalData.fireCount--;
         SpawnDeadFuze();

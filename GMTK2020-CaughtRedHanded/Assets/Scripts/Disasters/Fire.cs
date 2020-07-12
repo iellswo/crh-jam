@@ -5,6 +5,8 @@ using UnityEngine;
 public class Fire : Problem
 {
     // Start is called before the first frame update
+    private bool underRepair = false;
+
     void Start(){
         GlobalData.fireCount++;
     }
@@ -34,6 +36,11 @@ public class Fire : Problem
     }
 
     public override void Repair(){
+        if (underRepair){
+            return;
+        }
+
+        underRepair = true;
         //AudioSource.PlayClipAtPoint(RepairSound, transform.position);
         GlobalData.fireCount--;
         Destroy(gameObject);

@@ -1698,7 +1698,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Engine Heat:'
+  m_Text: Engine Heat
 --- !u!222 &778377078
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -12,12 +12,15 @@ public class AlarmLight : MonoBehaviour
     SpriteRenderer sprite;
     public AudioSource audioSource;
 
+    private bool isPlayingAudio;
+
 
     // Start is called before the first frame update
     void Start()
     {
-       sprite = GetComponent<SpriteRenderer>();
+        sprite = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
+        isPlayingAudio = false;
     }
 
     // Update is called once per frame
@@ -25,9 +28,14 @@ public class AlarmLight : MonoBehaviour
     {
         cTimer += Time.deltaTime;
         if(GlobalData.alarmOn){
-            if(  cTimer > alarmDelay){
+            if(cTimer > alarmDelay)
+            {
                 flipColor();
-                playAlarm();
+                if (!isPlayingAudio)
+                {
+                    playAlarm();
+                    isPlayingAudio = true;
+                }
                 cTimer = 0.0f;
             }
         }else{

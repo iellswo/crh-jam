@@ -13,13 +13,14 @@ public class Goose : Problem
     public float minInterval;
     public float maxInterval;
     public float jumpForce;
-    
+    public SpriteRenderer cagedGoose;
     private float interval;
     private Rigidbody2D _rigidbody2D;
     private SpriteRenderer _spriteRenderer;
 
     // Start is called before the first frame update
     void Start(){
+        
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _rigidbody2D.velocity = Vector2.right * speed;
@@ -45,6 +46,8 @@ public class Goose : Problem
     }
 
     public override void Repair(){
+        cagedGoose.enabled = true;
+        GlobalData.looseGoose = false;
         Destroy(gameObject);
     }
 

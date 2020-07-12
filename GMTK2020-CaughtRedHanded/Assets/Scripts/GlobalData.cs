@@ -20,15 +20,5 @@ public class GlobalData
     public static int cutWires = 0;
 
     public static string activeTool;
-
-    public static void ClearData()
-    {
-        fireCount = 0;
-        brokenFans = 0;
-        hullBreaches = 0;
-        blownFuzes = 0;
-        cutWires = 0;
-        activeTool = "";
-    }
-
+    public static bool looseGoose;
 }

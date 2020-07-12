@@ -1,9 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class HullBreacher : MonoBehaviour
 {
+    public float initInterlude;
+
     public float minInterlude;
 
     public float maxInterlude;
@@ -25,12 +25,13 @@ public class HullBreacher : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.B)){
-            breachHull();
-        }
+        //if (Input.GetKeyDown(KeyCode.B)){
+        //    breachHull();
+        //}
         
-        if (GlobalData.maxBreaches > GlobalData.hullBreaches && _interlude <= 0){
-            breachHull();
+        if (GlobalData.maxBreaches > GlobalData.hullBreaches && _interlude <= 0)
+        {
+            DisasterHandler.Singleton.AddDisaster(3, breachHull);
             _interlude = Random.Range(minInterlude, maxInterlude);
         }
         else{

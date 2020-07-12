@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FireStarter : MonoBehaviour
 {
+    public float initInterlude;
     public float minInterlude;
 
     public float maxInterlude;
@@ -16,8 +17,9 @@ public class FireStarter : MonoBehaviour
     private float _interlude;
 
     // Start is called before the first frame update
-    void Start(){
-        _interlude = Random.Range(minInterlude, maxInterlude);
+    void Start()
+    {
+        _interlude = initInterlude;
         _rect = GetComponent<RectTransform>().rect;
     }
 
@@ -25,12 +27,13 @@ public class FireStarter : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.F)){
-            SpawnFire();
-        }
+        //if (Input.GetKeyDown(KeyCode.F)){
+        //    SpawnFire();
+        //}
         
-        if (GlobalData.maxFires > GlobalData.fireCount && _interlude <= 0){
-            SpawnFire();
+        if (GlobalData.maxFires > GlobalData.fireCount && _interlude <= 0)
+        {
+            DisasterHandler.Singleton.AddDisaster(4, SpawnFire);
             _interlude = Random.Range(minInterlude, maxInterlude);
         }
         else{

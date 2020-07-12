@@ -94,7 +94,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bcbcc1f4f4de4b4faa5caa421616068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initInterlude: 40
   minInterlude: 20
   maxInterlude: 60
+  normalSprite: {fileID: 21300000, guid: bf3abbe574792be4bad2361f6fa0ac67, type: 3}
+  burntOutSprite: {fileID: 21300000, guid: 69af23f2afcb8e24483eab8fc60ca075, type: 3}
   hazard: {fileID: -2585102350600562476, guid: 304729663ef6efb4c8557fc66df4af0e, type: 3}
   _break: {fileID: 0}

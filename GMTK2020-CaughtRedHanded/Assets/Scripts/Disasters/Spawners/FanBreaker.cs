@@ -1,9 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FanBreaker : MonoBehaviour
 {
+    public float initInterlude;
+
     public float minInterlude;
 
     public float maxInterlude;
@@ -20,7 +20,7 @@ public class FanBreaker : MonoBehaviour
 
     // Start is called before the first frame update
     void Start(){
-        _interlude = Random.Range(minInterlude, maxInterlude);
+        _interlude = 35;
         _fanScript = GetComponentInParent<FanScript>();
         _rect = GetComponent<RectTransform>().rect;
     }
@@ -28,15 +28,18 @@ public class FanBreaker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (Input.GetKeyDown(KeyCode.G)){
-            BreakFan();
-        }
-        else if (_interlude <= 0){
-            BreakFan();
+
+        //if (Input.GetKeyDown(KeyCode.G)){
+        //    DisasterHandler.Singleton.AddDisaster(2, BreakFan);
+        //}
+        //else 
+        if (_interlude <= 0)
+        {
+            DisasterHandler.Singleton.AddDisaster(2, BreakFan);
             _interlude = Random.Range(minInterlude, maxInterlude);
         }
-        else{
+        else
+        {
             _interlude -= Time.deltaTime;
         }
     }

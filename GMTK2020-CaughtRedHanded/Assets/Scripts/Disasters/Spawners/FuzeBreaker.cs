@@ -1,13 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FuzeBreaker : MonoBehaviour
 {
+    public float initInterlude;
+
     public float minInterlude;
 
     public float maxInterlude;
 
+    public Sprite normalSprite;
+    public Sprite burntOutSprite;
 
     public BurningFuze hazard;
 
@@ -17,18 +19,22 @@ public class FuzeBreaker : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start(){
-        _interlude = Random.Range(minInterlude, maxInterlude);
+    void Start()
+    {
+        _interlude = initInterlude;
     }
 
     // Update is called once per frame
-    void Update(){
+    void Update()
+    {
 
-        if (Input.GetKeyDown(KeyCode.V)){
-            BreakFuze();
-        }
-        else if (_interlude <= 0){
-            BreakFuze();
+        //if (Input.GetKeyDown(KeyCode.V)){
+        //    DisasterHandler.Singleton.AddDisaster(3, BreakFuze);
+        //}
+        //else 
+        if (_interlude <= 0)
+        {
+            DisasterHandler.Singleton.AddDisaster(3, BreakFuze);
             _interlude = Random.Range(minInterlude, maxInterlude);
         }
         else{
@@ -38,6 +44,7 @@ public class FuzeBreaker : MonoBehaviour
 
     private void BreakFuze(){
         if (_break == null){
+            GetComponent<SpriteRenderer>().sprite = burntOutSprite;
             var fuze = Instantiate(hazard, transform.position, Quaternion.identity);
             fuze.fuzeBreaker  = this;
             _break = fuze;
@@ -51,6 +58,6 @@ public class FuzeBreaker : MonoBehaviour
 
     public void showFuze(){
         GetComponentInParent<SpriteRenderer>().enabled = true;
-
+        GetComponent<SpriteRenderer>().sprite = normalSprite;
     }
 }

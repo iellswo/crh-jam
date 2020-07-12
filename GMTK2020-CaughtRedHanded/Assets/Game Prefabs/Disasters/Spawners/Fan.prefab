@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0174679fda0d59c428a31272c5896091, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3882353, g: 0.3882353, b: 0.3882353, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b2730efb87450b4f85a806f742e56d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fanSpeed: 30
+  fanSpeed: 200
   brokenSpeed: 60
 --- !u!50 &8948502057497152050
 Rigidbody2D:
@@ -191,7 +191,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0158977ec85dfae44a166d251e405fed, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5647059, g: 0.5647059, b: 0.5647059, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -249,6 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 105ad75034f4cd74e9df3575bc9ba7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initInterlude: 55
   minInterlude: 10
   maxInterlude: 60
   hazard: {fileID: 231699308814778407, guid: 958a2bb3107267f4a9380a3d9c6a30b6, type: 3}

@@ -17,7 +17,9 @@ public class CoolantController : MonoBehaviour
 
     public LevelController levelController;
     public Lever lever;
-    
+
+    public float initInterlude;
+
     public float minInterlude = 60;
 
     public float maxInterlude = 180;
@@ -63,14 +65,13 @@ public class CoolantController : MonoBehaviour
         lever.ReturnToCenter();
         levelController.AdjustFill(1, 10);
         currentLevel = 100;
-        _interlude = Random.Range(minInterlude, maxInterlude);
+        _interlude = initInterlude;
     }
 
     // Update is called once per frame
     void Update()
     {
         CheckLeverState();
-        //TODO: Check if there is a leak, this will override the lever state.
         CheckLeakState();
         AdjustLevel();
         FollowUp();
@@ -95,14 +96,15 @@ public class CoolantController : MonoBehaviour
 
     private void CheckLeakState()
     {
-        if (Input.GetKeyDown(KeyCode.L) && !GlobalData.activeLeak)
+        //if (Input.GetKeyDown(KeyCode.L) && !GlobalData.activeLeak)
+        //{
+        //    QueueLeak();
+        //    _interlude = Random.Range(minInterlude, maxInterlude);
+        //}
+        //else 
+        if (!GlobalData.activeLeak && _interlude <=0)
         {
-            SpringLeak();
-            _interlude = Random.Range(minInterlude, maxInterlude);
-        }
-        else if(!GlobalData.activeLeak && _interlude <=0)
-        {
-            SpringLeak();
+            QueueLeak();
             _interlude = Random.Range(minInterlude, maxInterlude);
         }
         else if (_interlude <= 0)
@@ -113,8 +115,7 @@ public class CoolantController : MonoBehaviour
         {
             _interlude -= Time.deltaTime;
         }
-
-        // TODO: if there is an active leak, get it's height and set state to leaking if we are above, or steady if slightly below.
+        
         if (GlobalData.activeLeak)
         {
             if (currentLevel > (_leak._fillBeforeRepair - .5f) && curState != CoolantState.Draining)
@@ -122,6 +123,11 @@ public class CoolantController : MonoBehaviour
                 curState = CoolantState.Leaking;
             }
         }
+    }
+
+    private void QueueLeak()
+    {
+        DisasterHandler.Singleton.AddDisaster(1, SpringLeak);
     }
 
     private void SpringLeak()

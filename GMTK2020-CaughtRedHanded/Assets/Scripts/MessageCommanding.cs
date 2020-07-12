@@ -29,6 +29,7 @@ public class MessageCommanding : MonoBehaviour
     void Start()
     {
         messageIsVisible = false;
+
         messageBacklog = new Queue<BackloggedMessage>();
         ShowTutorialMessage(0);
         ShowTutorialMessage(1);
@@ -61,7 +62,7 @@ public class MessageCommanding : MonoBehaviour
                 awaitingFirstEvent[1] = false;
             }
 
-            //Checking if broken fuse first appeared
+            //Checking if the fuse broke for the first time
             if ((GlobalData.blownFuzes > 0) && (awaitingFirstEvent[2]))
             {
                 ShowTutorialMessage(5);
@@ -85,15 +86,13 @@ public class MessageCommanding : MonoBehaviour
                 awaitingFirstEvent[4] = false;
             }
 
-            //WIRE CODE HERE
-            awaitingFirstEvent[5] = false;
-            /*
-             * if ((GlobalData.cutWires > 0) && (awaitingFirstEvent[5]))
-             * {
-             *      ShowTutorialMessage(6);
-             *      awaitingFirstEvent[5] = false;
-             * }
-            */
+            //Checking if wire has been cut for the first time
+            if ((GlobalData.cutWires > 0) && (awaitingFirstEvent[5]))
+            {
+                ShowTutorialMessage(6);
+                awaitingFirstEvent[5] = false;
+            }
+            
 
             //ALARM CODE HERE
             awaitingFirstEvent[6] = false;

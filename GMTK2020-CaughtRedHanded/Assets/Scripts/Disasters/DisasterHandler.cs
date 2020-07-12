@@ -94,7 +94,7 @@ public class DisasterHandler : MonoBehaviour
         {
             _interval = GetNewInterval();
             _timeSinceLastCheck = 0f;
-            if (disasterRequests.Count > 0 && GlobalData.ActiveDisasterCount() < curStep.disastersAllowed)
+            if (disasterRequests.Count > 0 && (GlobalData.ActiveDisasterCount() < curStep.disastersAllowed || curStep.disastersAllowed < 0))
             {
                 Debug.Log("Spawning a new Disaster");
                 disasterRequests[0].spawnFunc();

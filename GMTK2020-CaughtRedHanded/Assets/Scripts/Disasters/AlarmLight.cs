@@ -24,10 +24,12 @@ public class AlarmLight : MonoBehaviour
     void Update()
     {
         cTimer += Time.deltaTime;
-        if(GlobalData.alarmOn&& cTimer > alarmDelay){
-            flipColor();
-            playAlarm();
-            cTimer = 0.0f;
+        if(GlobalData.alarmOn){
+            if(  cTimer > alarmDelay){
+                flipColor();
+                playAlarm();
+                cTimer = 0.0f;
+            }
         }else{
             resetColor();
         }

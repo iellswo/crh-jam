@@ -568,13 +568,8 @@ Transform:
   m_LocalPosition: {x: 460, y: 200, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-<<<<<<< HEAD
   m_Father: {fileID: 1933731231}
   m_RootOrder: 2
-=======
-  m_Father: {fileID: 0}
-  m_RootOrder: 20
->>>>>>> 33a4fa0e12e965a3dac48aaadec4cbd6c6b1335e
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &310945000
 MonoBehaviour:
@@ -1792,11 +1787,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< HEAD
   m_RootOrder: 22
-=======
-  m_RootOrder: 21
->>>>>>> 33a4fa0e12e965a3dac48aaadec4cbd6c6b1335e
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &816253168 stripped
 GameObject:
@@ -8591,10 +8582,7 @@ RectTransform:
   m_Children:
   - {fileID: 878695021}
   - {fileID: 1426929836}
-<<<<<<< HEAD
   - {fileID: 310944999}
-=======
->>>>>>> 33a4fa0e12e965a3dac48aaadec4cbd6c6b1335e
   - {fileID: 1198451209}
   m_Father: {fileID: 0}
   m_RootOrder: 10

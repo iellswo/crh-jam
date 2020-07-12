@@ -31,6 +31,10 @@ public class DisasterHandler : MonoBehaviour
 
     public ProgramStep[] programSteps;
 
+    public ETAText eta;
+
+    private float timeRemaining;
+
     [Header("Data")]
     [Tooltip("don't edit this, just for information")]
     public int DisastersInQueue;
@@ -61,6 +65,8 @@ public class DisasterHandler : MonoBehaviour
         _timeSinceLastClear = 0f;
         _interval = initialInterval;
         _areClearing = curStep.clearQueue > 0f;
+
+        timeRemaining = GetTotalTime();
     }
 
     // Update is called once per frame
@@ -70,6 +76,13 @@ public class DisasterHandler : MonoBehaviour
         _timeInCurrentStep += Time.deltaTime;
         _timeSinceLastCheck += Time.deltaTime;
         _timeSinceLastClear += Time.deltaTime;
+        timeRemaining -= Time.deltaTime;
+        eta.UpdateETA(Mathf.RoundToInt(timeRemaining));
+        if (timeRemaining <= 0)
+        {
+            Debug.Log("Victory!");
+            //TODO: Win.
+        }
 
         if (curStepIndex < programSteps.Length && _timeInCurrentStep > curStep.length)
         {
@@ -131,5 +144,16 @@ public class DisasterHandler : MonoBehaviour
     private float GetNewInterval()
     {
         return Random.Range(curStep.minInterval, curStep.maxInterval);
+    }
+
+    private float GetTotalTime()
+    {
+        float t = 0;
+        foreach (ProgramStep step in programSteps)
+        {
+            t += step.length;
+        }
+
+        return t;
     }
 }

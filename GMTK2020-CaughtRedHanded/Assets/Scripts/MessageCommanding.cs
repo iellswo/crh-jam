@@ -96,15 +96,12 @@ public class MessageCommanding : MonoBehaviour
             }
             
 
-            //ALARM CODE HERE
-            awaitingFirstEvent[6] = false;
-            /*
-             * if ((GlobalData.alarms > 0) && (awaitingFirstEvent[6]))
-             * {
-             *      ShowTutorialMessage(8);
-             *      awaitingFirstEvent[6] = false;
-             * }
-            */
+            //Checking if alarm goes off for the first time
+            if ((GlobalData.alarmOn) && (awaitingFirstEvent[6]))
+            {
+                ShowTutorialMessage(8);
+                awaitingFirstEvent[6] = false;
+            }
 
             //Checking if the coolant tower broke for the first time
             if ((GlobalData.activeLeak) && (awaitingFirstEvent[7]))

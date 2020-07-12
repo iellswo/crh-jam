@@ -8,7 +8,7 @@ public class AlarmLight : MonoBehaviour
     public Color32 c2 = new Color32(255,255,0,255);
     bool flip = true;
     float cTimer = 0;
-    float alarmDelay=.5f;
+    float alarmDelay=1.0f;
     SpriteRenderer sprite;
     public AudioSource audioSource;
 
@@ -24,13 +24,19 @@ public class AlarmLight : MonoBehaviour
     void Update()
     {
         cTimer += Time.deltaTime;
-        if(GlobalData.alarmOn&& cTimer > alarmDelay){
-            flipColor();
-            playAlarm();
-            cTimer = 0.0f;
+        if(GlobalData.alarmOn){
+            if(  cTimer > alarmDelay){
+                if(cTimer > alarmDelay/2){
+                    flipColor();
+                }
+                playAlarm();
+                cTimer = 0.0f;
+            }
         }else{
             resetColor();
+            audioSource.Stop();
         }
+
     }
 
     public void flipColor(){

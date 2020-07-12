@@ -8,10 +8,12 @@ public class Alarm : MonoBehaviour {
     public bool active;
     public float maxInterval = 500;
     public float minInterval = 100;
+    public AudioSource AS;
     void Start()
     {
         // GlobalData.alarmCountDown  = Random.Range(minInterval,maxInterval);
         timer  = Random.Range(minInterval,maxInterval);
+        AS = GetComponent<AudioSource>();
         active = false;  
     }
 
@@ -28,6 +30,7 @@ public class Alarm : MonoBehaviour {
 
     }
     public void OnMouseDown() {
+        AS.Play();
         if(GlobalData.alarmOn){
             timer = Random.Range(minInterval,maxInterval);
             GlobalData.alarmOn = false;

@@ -37,6 +37,7 @@
           <e p="MenuFunctions.cs" t="Include" />
           <e p="MessageBox.cs" t="Include" />
           <e p="MessageCommanding.cs" t="Include" />
+          <e p="PauseMenuHandler.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="ToolParticleController.cs" t="Include" />
           <e p="ToolTray.cs" t="Include" />

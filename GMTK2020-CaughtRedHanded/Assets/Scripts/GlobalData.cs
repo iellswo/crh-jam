@@ -22,10 +22,11 @@ public class GlobalData
 
     public static string activeTool;
     public static bool looseGoose;
-
+    public static bool alarmOn;
 
     public static void ClearData()
     {
+        alarmOn = false;
         fireCount = 0;
         brokenFans = 0;
         hullBreaches = 0;

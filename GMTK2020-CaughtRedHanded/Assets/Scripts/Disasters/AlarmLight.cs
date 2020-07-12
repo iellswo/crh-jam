@@ -8,19 +8,16 @@ public class AlarmLight : MonoBehaviour
     public Color32 c2 = new Color32(255,255,0,255);
     bool flip = true;
     float cTimer = 0;
-    float alarmDelay=.5f;
+    float alarmDelay=1.0f;
     SpriteRenderer sprite;
     public AudioSource audioSource;
-
-    private bool isPlayingAudio;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        sprite = GetComponent<SpriteRenderer>();
+       sprite = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
-        isPlayingAudio = false;
     }
 
     // Update is called once per frame
@@ -28,19 +25,18 @@ public class AlarmLight : MonoBehaviour
     {
         cTimer += Time.deltaTime;
         if(GlobalData.alarmOn){
-            if(cTimer > alarmDelay)
-            {
-                flipColor();
-                if (!isPlayingAudio)
-                {
-                    playAlarm();
-                    isPlayingAudio = true;
+            if(  cTimer > alarmDelay){
+                if(cTimer > alarmDelay/2){
+                    flipColor();
                 }
+                playAlarm();
                 cTimer = 0.0f;
             }
         }else{
             resetColor();
+            audioSource.Stop();
         }
+
     }
 
     public void flipColor(){

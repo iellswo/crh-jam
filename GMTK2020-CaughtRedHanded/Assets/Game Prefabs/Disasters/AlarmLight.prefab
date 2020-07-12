@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1623027791189830994
+--- !u!1 &957965293925320581
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,11 +8,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1623027791189830999}
-  - component: {fileID: 1623027791189830998}
-  - component: {fileID: 513416277910636914}
-  - component: {fileID: 1623027791189830995}
-  - component: {fileID: 1623027791189830992}
+  - component: {fileID: 957965293925320576}
+  - component: {fileID: 957965293925320577}
+  - component: {fileID: 2084394859483030437}
+  - component: {fileID: 957965293925320580}
+  - component: {fileID: 957965293925320583}
   m_Layer: 0
   m_Name: AlarmLight
   m_TagString: Untagged
@@ -20,13 +20,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1623027791189830999
+--- !u!224 &957965293925320576
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1623027791189830994}
+  m_GameObject: {fileID: 957965293925320581}
   m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: -0.090026855}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
@@ -39,25 +39,25 @@ RectTransform:
   m_AnchoredPosition: {x: -2.23, y: 3.99}
   m_SizeDelta: {x: 10.24, y: 10.24}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &1623027791189830998
+--- !u!222 &957965293925320577
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1623027791189830994}
+  m_GameObject: {fileID: 957965293925320581}
   m_CullTransparentMesh: 0
---- !u!82 &513416277910636914
+--- !u!82 &2084394859483030437
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1623027791189830994}
+  m_GameObject: {fileID: 957965293925320581}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2439da7432cf68644973ad9188a501a2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a66b1fa4e003a994f8398512c75423af, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -143,13 +143,13 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!212 &1623027791189830995
+--- !u!212 &957965293925320580
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1623027791189830994}
+  m_GameObject: {fileID: 957965293925320581}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -193,13 +193,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1623027791189830992
+--- !u!114 &957965293925320583
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1623027791189830994}
+  m_GameObject: {fileID: 957965293925320581}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1178e93783f6d8409f086a6de679d08, type: 3}

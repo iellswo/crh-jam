@@ -141,6 +141,7 @@ public class MessageCommanding : MonoBehaviour
             ShowMessage(messageToShow, "Alright...");
         else
             messageBacklog.Enqueue(new BackloggedMessage(messageToShow, true));
+        Time.timeScale = 0f;
     }
 
     /// <summary>
@@ -195,12 +196,16 @@ public class MessageCommanding : MonoBehaviour
         Destroy(messageBoxInstance);
         messageBoxInstance = null;
         messageIsVisible = false;
+        Time.timeScale = 1f;
 
         if (messageBacklog.Count > 0)
         {
             BackloggedMessage nextInQueue = messageBacklog.Peek();
             if (nextInQueue.isTutorial)
+            {
                 ShowMessage(nextInQueue.text, "Alright...");
+                Time.timeScale = 0f;
+            }
             else
                 ShowMessage(nextInQueue.text, "Go away!");
             messageBacklog.Dequeue();

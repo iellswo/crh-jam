@@ -40,6 +40,9 @@ public class CoolantController : MonoBehaviour
 
     private TowerSpriteManager towerSpriteManager;
 
+    private AudioSource _audioSource;
+    public AudioSource leakageAudioSource;
+
     private enum CoolantState
     {
         Filling,
@@ -66,6 +69,8 @@ public class CoolantController : MonoBehaviour
         levelController.AdjustFill(1, 10);
         currentLevel = 100;
         _interlude = initInterlude;
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -150,6 +155,9 @@ public class CoolantController : MonoBehaviour
                 CreateLeak(TowerSection.Bottom, lowerLeak);
                 break;
         }
+
+        _audioSource.Play();
+        leakageAudioSource.Play();
     }
 
     private void CreateLeak(TowerSection section, LeakDefinition definition)
@@ -166,6 +174,7 @@ public class CoolantController : MonoBehaviour
     public void ReportFixedLeak(TowerSection section)
     {
         towerSpriteManager.Repair(section);
+        leakageAudioSource.Stop();
     }
 
     private void AdjustLevel()

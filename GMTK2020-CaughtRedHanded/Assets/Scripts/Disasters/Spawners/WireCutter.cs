@@ -16,11 +16,15 @@ public class WireCutter : MonoBehaviour
     public Problem _break;
     private SpriteRenderer _spriteRenderer;
 
+    private AudioSource _audioSource;
+
 
     // Start is called before the first frame update
     void Start(){
         _spriteRenderer = GetComponentInParent<SpriteRenderer>();
         _interlude = initInterlude;
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -48,6 +52,8 @@ public class WireCutter : MonoBehaviour
             wire.wireCutter  = this;
             hideWire();
             _break = wire;
+
+            _audioSource.Play();
         }
     }
 

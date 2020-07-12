@@ -69,15 +69,12 @@ public class MessageCommanding : MonoBehaviour
                 awaitingFirstEvent[2] = false;
             }
 
-            //GOOSE CODE HERE
-            awaitingFirstEvent[3] = false;
-            /*
-             * if ((GlobalData.geese > 0) && (awaitingFirstEvent[3]))
-             * {
-             *      ShowTutorialMessage(4);
-             *      awaitingFirstEvent[3] = false;
-             * }
-            */
+            //Checking if the goose broke out for the first time
+            if ((GlobalData.looseGoose) && (awaitingFirstEvent[3]))
+            {
+                ShowTutorialMessage(4);
+                awaitingFirstEvent[3] = false;
+            }
 
             //Checking if broken vent first appeared
             if ((GlobalData.brokenFans > 0) && (awaitingFirstEvent[4]))
@@ -104,15 +101,12 @@ public class MessageCommanding : MonoBehaviour
              * }
             */
 
-            //COOLAN TOWER CODE HERE
-            awaitingFirstEvent[7] = false;
-            /*
-             * if ((GlobalData.coolantTower > 0) && (awaitingFirstEvent[7]))
-             * {
-             *      ShowTutorialMessage(9);
-             *      awaitingFirstEvent[7] = false;
-             * }
-            */
+            //Checking if the coolant tower broke for the first time
+            if ((GlobalData.activeLeak) && (awaitingFirstEvent[7]))
+            {
+                ShowTutorialMessage(9);
+                awaitingFirstEvent[7] = false;
+            }
 
             canThrowRandoms = CheckRandomMessagePermit();
         }
@@ -127,12 +121,6 @@ public class MessageCommanding : MonoBehaviour
             else
             {
                 interlude -= Time.deltaTime;
-            }
-
-            //Manual control (remove when cutting debug functions)
-            if (Input.GetKeyDown(KeyCode.M))
-            {
-                ShowRandomMessage();
             }
         }
     }

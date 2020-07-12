@@ -23,4 +23,5 @@ public class GlobalData
     public static bool activeLeak = false;
 
     public static string activeTool;
+    public static bool looseGoose;
 }

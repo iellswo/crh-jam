@@ -16,11 +16,13 @@
             <e p="EmptyFuze.cs" t="Include" />
             <e p="FanSpark.cs" t="Include" />
             <e p="Fire.cs" t="Include" />
+            <e p="Goose.cs" t="Include" />
             <e p="HullBreach.cs" t="Include" />
             <e p="Spawners" t="Include">
               <e p="FanBreaker.cs" t="Include" />
               <e p="FireStarter.cs" t="Include" />
               <e p="FuzeBreaker.cs" t="Include" />
+              <e p="GooseGun.cs" t="Include" />
               <e p="HullBreacher.cs" t="Include" />
               <e p="WireCutter.cs" t="Include" />
             </e>
@@ -35,7 +37,9 @@
           <e p="MenuFunctions.cs" t="Include" />
           <e p="MessageBox.cs" t="Include" />
           <e p="MessageCommanding.cs" t="Include" />
+          <e p="PauseMenuHandler.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
+          <e p="ToolParticleController.cs" t="Include" />
           <e p="ToolTray.cs" t="Include" />
         </e>
         <e p="Shaders" t="Include">

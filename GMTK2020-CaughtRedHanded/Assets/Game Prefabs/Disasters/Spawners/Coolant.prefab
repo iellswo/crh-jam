@@ -1,5 +1,167 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1049194328803441624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4170872572736482867}
+  - component: {fileID: 4647677695446781393}
+  m_Layer: 0
+  m_Name: CoolantTower_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4170872572736482867
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049194328803441624}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6181333376304974846}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &4647677695446781393
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049194328803441624}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -1304664423
+  m_SortingLayer: 2
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: 248e90f4aa9f95640ae8ed1ac2a7579c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 8, y: 8}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &2448871868247485104
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8537181731506492412}
+  - component: {fileID: 5279673308508064340}
+  m_Layer: 0
+  m_Name: CoolantTower_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8537181731506492412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2448871868247485104}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6181333376304974846}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &5279673308508064340
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2448871868247485104}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -1304664423
+  m_SortingLayer: 2
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: 620bf844f16759545899cd4bb31e1f6b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 8, y: 8}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &6181333376079192056
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +173,7 @@ GameObject:
   - component: {fileID: 6181333376079192057}
   - component: {fileID: 6181333376079192054}
   m_Layer: 0
-  m_Name: EmptyCoolantTowerAsset
+  m_Name: CoolantTower_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,7 +232,7 @@ SpriteRenderer:
   m_SortingLayerID: -1304664423
   m_SortingLayer: 2
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 36f0d23a60c07d443891116b345586b1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e535784b8485b604190b4addf7bc4dcb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -91,6 +253,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6181333376304974846}
   - component: {fileID: 6181333376304974847}
+  - component: {fileID: 6700048436535324735}
   m_Layer: 0
   m_Name: Coolant
   m_TagString: Untagged
@@ -110,6 +273,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6181333376079192057}
+  - {fileID: 4170872572736482867}
+  - {fileID: 8537181731506492412}
   - {fileID: 6181333376364877459}
   - {fileID: 6181333377697630485}
   m_Father: {fileID: 0}
@@ -132,6 +297,54 @@ MonoBehaviour:
   leakSpeed: 2
   levelController: {fileID: 6181333376364877457}
   lever: {fileID: 6181333377697630483}
+  minInterlude: 60
+  maxInterlude: 180
+  upperLeak:
+    xPos: 0.57
+    yPos: 1.71
+    fillLevel: 69
+    flip: 0
+  middleLeak:
+    xPos: -1.07
+    yPos: -0.46
+    fillLevel: 43
+    flip: 1
+  lowerLeak:
+    xPos: 0.49
+    yPos: -3.25
+    fillLevel: 8.4
+    flip: 0
+  leakPrefab: {fileID: 6708409429842462786, guid: dd646a955570188448575fa3edd6f26a,
+    type: 3}
+  currentLevel: 0
+  _leak: {fileID: 0}
+--- !u!114 &6700048436535324735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6181333376304974593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31d889c29158ba74db9524c78dd824e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topRender: {fileID: 6181333376079192054}
+  middleRender: {fileID: 4647677695446781393}
+  bottomRender: {fileID: 5279673308508064340}
+  top:
+    Whole: {fileID: 21300000, guid: e535784b8485b604190b4addf7bc4dcb, type: 3}
+    Cracked: {fileID: 21300000, guid: f84464e51fd55484fb5cecfe20739c92, type: 3}
+    Repaired: {fileID: 21300000, guid: a50569fec3221864ba5743f2309a4656, type: 3}
+  middle:
+    Whole: {fileID: 21300000, guid: 248e90f4aa9f95640ae8ed1ac2a7579c, type: 3}
+    Cracked: {fileID: 21300000, guid: d6e88697a9256774ea46739d7b59df63, type: 3}
+    Repaired: {fileID: 21300000, guid: 9012fc5fedaba6343939f63de9958e90, type: 3}
+  bottom:
+    Whole: {fileID: 21300000, guid: 620bf844f16759545899cd4bb31e1f6b, type: 3}
+    Cracked: {fileID: 21300000, guid: aef55dc18d10afb4ca3ca87475c5e46c, type: 3}
+    Repaired: {fileID: 21300000, guid: 00fdf6b0e3dc3bb4d9db862deae68017, type: 3}
 --- !u!1 &6181333376364877458
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,7 +375,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6181333376304974846}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6181333376364877456
 SpriteRenderer:
@@ -258,7 +471,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6181333376304974846}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6181333377697630484
 SpriteRenderer:
@@ -296,8 +509,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1304664423
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 905a13f4ff122a544b1abda5e6b9443e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

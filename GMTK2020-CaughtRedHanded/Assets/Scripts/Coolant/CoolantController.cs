@@ -2,15 +2,41 @@
 
 public class CoolantController : MonoBehaviour
 {
+    [System.Serializable]
+    public class LeakDefinition
+    {
+        public float xPos;
+        public float yPos;
+        public float fillLevel;
+        public bool flip;
+    }
+
     public float drainSpeed = 10;
     public float fillSpeed = 5;
     public float leakSpeed = 2;
 
     public LevelController levelController;
     public Lever lever;
+    
+    public float minInterlude = 60;
 
-    private float currentLevel;
+    public float maxInterlude = 180;
+
+    public LeakDefinition upperLeak;
+    public LeakDefinition middleLeak;
+    public LeakDefinition lowerLeak;
+
+    public Leak leakPrefab;
+
+    [HideInInspector]
+    public float currentLevel;
     private float error = .05f;
+    
+    private float _interlude;
+    [HideInInspector]
+    public Leak _leak;
+
+    private TowerSpriteManager towerSpriteManager;
 
     private enum CoolantState
     {
@@ -20,14 +46,24 @@ public class CoolantController : MonoBehaviour
         Steady
     }
 
+    public enum TowerSection
+    {
+        Top,
+        Middle,
+        Bottom
+    }
+
     private CoolantState curState;
 
     // Start is called before the first frame update
     void Start()
     {
+        towerSpriteManager = GetComponent<TowerSpriteManager>();
+
         lever.ReturnToCenter();
         levelController.AdjustFill(1, 10);
         currentLevel = 100;
+        _interlude = Random.Range(minInterlude, maxInterlude);
     }
 
     // Update is called once per frame
@@ -35,6 +71,7 @@ public class CoolantController : MonoBehaviour
     {
         CheckLeverState();
         //TODO: Check if there is a leak, this will override the lever state.
+        CheckLeakState();
         AdjustLevel();
         FollowUp();
     }
@@ -56,6 +93,75 @@ public class CoolantController : MonoBehaviour
         }
     }
 
+    private void CheckLeakState()
+    {
+        if (Input.GetKeyDown(KeyCode.L) && !GlobalData.activeLeak)
+        {
+            SpringLeak();
+            _interlude = Random.Range(minInterlude, maxInterlude);
+        }
+        else if(!GlobalData.activeLeak && _interlude <=0)
+        {
+            SpringLeak();
+            _interlude = Random.Range(minInterlude, maxInterlude);
+        }
+        else if (_interlude <= 0)
+        {
+            _interlude = Random.Range(minInterlude, maxInterlude);
+        }
+        else
+        {
+            _interlude -= Time.deltaTime;
+        }
+
+        // TODO: if there is an active leak, get it's height and set state to leaking if we are above, or steady if slightly below.
+        if (GlobalData.activeLeak)
+        {
+            if (currentLevel > (_leak._fillBeforeRepair - .5f) && curState != CoolantState.Draining)
+            {
+                curState = CoolantState.Leaking;
+            }
+        }
+    }
+
+    private void SpringLeak()
+    {
+        GlobalData.activeLeak = true;
+        int pos = Mathf.FloorToInt(Random.Range(0, 2.99f));
+
+        switch(pos)
+        {
+            case 0:
+                towerSpriteManager.Break(TowerSection.Top);
+                CreateLeak(TowerSection.Top, upperLeak);
+                break;
+            case 1:
+                towerSpriteManager.Break(TowerSection.Middle);
+                CreateLeak(TowerSection.Middle, middleLeak);
+                break;
+            case 2:
+                towerSpriteManager.Break(TowerSection.Bottom);
+                CreateLeak(TowerSection.Bottom, lowerLeak);
+                break;
+        }
+    }
+
+    private void CreateLeak(TowerSection section, LeakDefinition definition)
+    {
+        if (_leak == null)
+        {
+            Vector3 offset = new Vector3(definition.xPos, definition.yPos, 0);
+            _leak = Instantiate(leakPrefab, transform.position + offset, Quaternion.identity);
+            _leak.Setup(section, definition.fillLevel, definition.flip);
+            _leak.controller = this;
+        }
+    }
+
+    public void ReportFixedLeak(TowerSection section)
+    {
+        towerSpriteManager.Repair(section);
+    }
+
     private void AdjustLevel()
     {
         switch(curState)
@@ -65,6 +171,9 @@ public class CoolantController : MonoBehaviour
                 break;
             case CoolantState.Draining:
                 currentLevel = Mathf.MoveTowards(currentLevel, 0, drainSpeed * Time.deltaTime);
+                break;
+            case CoolantState.Leaking:
+                currentLevel = Mathf.MoveTowards(currentLevel, 0, leakSpeed * Time.deltaTime);
                 break;
         }
 

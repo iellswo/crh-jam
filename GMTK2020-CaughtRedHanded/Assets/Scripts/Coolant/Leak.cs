@@ -13,10 +13,14 @@ public class Leak : Problem
     private bool _flip;
     private CoolantController.TowerSection _section;
 
+    private AudioSource _audioSource;
+
     void Start()
     {
         left.SetActive(false);
         right.SetActive(false);
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -45,12 +49,16 @@ public class Leak : Problem
     {
         left.SetActive(flip);
         right.SetActive(!flip);
+
+        _audioSource.Play();
     }
 
     private void TurnoffSpill()
     {
         left.SetActive(false);
         right.SetActive(false);
+
+        _audioSource.Stop();
     }
     
     public override void Repair()

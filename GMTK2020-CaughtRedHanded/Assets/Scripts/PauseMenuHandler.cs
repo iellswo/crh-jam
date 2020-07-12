@@ -28,6 +28,7 @@ public class PauseMenuHandler : MonoBehaviour
 
     public void BackToMainMenu()
     {
+        Time.timeScale = 1;
         GlobalFunctions.LoadScene("TitleScene");
     }
 

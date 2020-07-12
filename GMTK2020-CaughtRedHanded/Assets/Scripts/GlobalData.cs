@@ -19,5 +19,8 @@ public class GlobalData
     public static int blownFuzes=0;
     public static int cutWires = 0;
 
+    public static int coolantLevel = 100;
+    public static bool activeLeak = false;
+
     public static string activeTool;
 }

@@ -18,6 +18,7 @@ public class HeatTracking : MonoBehaviour
     public int breachDamage = 5;
     public int fuseDamage = 5;
     public int wireDamage = 20;
+    public int coolantDamageMax = 35;
     
     void Start()
     {
@@ -53,8 +54,18 @@ public class HeatTracking : MonoBehaviour
         heat += GlobalData.hullBreaches * breachDamage;
         heat += GlobalData.blownFuzes * fuseDamage;
         heat += GlobalData.cutWires * wireDamage;
+        heat += CalculateCoolantHeat();
         //Other issues should be added here to the count
         return heat;
+    }
+
+    private int CalculateCoolantHeat()
+    {
+        int deficit = 100 - GlobalData.coolantLevel;
+        float fDeficit = (deficit * 1.0f) / 100f;
+        float fHeat = fDeficit * coolantDamageMax;
+
+        return (int)Mathf.Round(fHeat);
     }
 
 }

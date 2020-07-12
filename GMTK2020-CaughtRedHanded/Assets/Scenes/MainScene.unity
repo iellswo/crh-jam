@@ -1894,22 +1894,22 @@ MonoBehaviour:
   - length: 55
     disastersAllowed: 6
     minInterval: 3
-    maxInterval: 15
+    maxInterval: 5
     clearQueue: 22
   - length: 40
     disastersAllowed: -1
-    minInterval: 5
-    maxInterval: 20
+    minInterval: 2
+    maxInterval: 5
     clearQueue: 60
   - length: 35
     disastersAllowed: -1
     minInterval: 5
-    maxInterval: 20
+    maxInterval: 12
     clearQueue: 60
   - length: 25
     disastersAllowed: -1
-    minInterval: 6
-    maxInterval: 10
+    minInterval: 2
+    maxInterval: 5
     clearQueue: 60
   - length: 15
     disastersAllowed: -1

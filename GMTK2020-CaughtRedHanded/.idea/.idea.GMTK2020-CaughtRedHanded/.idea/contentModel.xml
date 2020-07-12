@@ -36,6 +36,7 @@
               <e p="WireCutter.cs" t="Include" />
             </e>
           </e>
+          <e p="ETAText.cs" t="Include" />
           <e p="FanScript.cs" t="Include" />
           <e p="GenericTool.cs" t="Include" />
           <e p="GlobalData.cs" t="Include" />

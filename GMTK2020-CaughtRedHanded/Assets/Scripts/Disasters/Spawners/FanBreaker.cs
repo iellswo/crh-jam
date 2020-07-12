@@ -18,11 +18,16 @@ public class FanBreaker : MonoBehaviour
 
     private FanScript _fanScript;
 
+    private AudioSource _audioSource;
+    public AudioSource parentAudioSource;
+
     // Start is called before the first frame update
     void Start(){
         _interlude = 35;
         _fanScript = GetComponentInParent<FanScript>();
         _rect = GetComponent<RectTransform>().rect;
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -53,6 +58,9 @@ public class FanBreaker : MonoBehaviour
             _fanScript.Stop();
             breakscript.handler = this;
             GlobalData.brokenFans++;
+
+            parentAudioSource.Stop();
+            _audioSource.Play();
         }
     }
 }

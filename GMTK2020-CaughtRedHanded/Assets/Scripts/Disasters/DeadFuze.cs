@@ -5,8 +5,11 @@ public class DeadFuze : Problem
     public EmptyFuze emptyFuze;
 
     public FuzeBreaker fuzeBreaker;
+
+
     // Start is called before the first frame update
-    void Start(){
+    void Start()
+    {
     }
 
     // Update is called once per frame
@@ -15,7 +18,6 @@ public class DeadFuze : Problem
         
     }
     public override void Repair(){
-        //AudioSource.PlayClipAtPoint(RepairSound, transform.position);
         spawnEmptyFuze();
         Destroy(gameObject);
     }

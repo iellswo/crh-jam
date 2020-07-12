@@ -13,11 +13,18 @@ public class FanScript : MonoBehaviour
     private float back = 0.1f;
     private float timeInState;
     private bool busted;
+
+    private AudioSource _audioSource;
+    public AudioSource breakAudioSource;
+
+
     // Start is called before the first frame update
     void Start(){
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _rigidbody2D.angularVelocity = fanSpeed;
         busted = false;
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -49,5 +56,8 @@ public class FanScript : MonoBehaviour
     {
         _rigidbody2D.angularVelocity = fanSpeed;
         busted = false;
+
+        breakAudioSource.Stop();
+        _audioSource.Play();
     }
 }

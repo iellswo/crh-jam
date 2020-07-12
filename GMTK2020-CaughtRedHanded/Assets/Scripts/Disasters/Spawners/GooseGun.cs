@@ -17,7 +17,7 @@ public class GooseGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (interval <= 0){
+        if (interval <= 0 || Input.GetKeyDown(KeyCode.T)){
             Instantiate(goose, transform.position, Quaternion.identity);
             interval = Random.Range(minInterval, maxInterval);
         }

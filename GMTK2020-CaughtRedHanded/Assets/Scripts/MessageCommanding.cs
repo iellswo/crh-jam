@@ -180,9 +180,14 @@ public class MessageCommanding : MonoBehaviour
     /// </summary>
     /// <param name="message">Text of the message</param>
     /// <param name="buttonText">Text on the button to dismiss message</param>
-    public void ShowOutsiderMessage(string message, string buttonText)
+    public void ShowOutsiderMessage(string message, string buttonText, bool pause = false)
     {
         ShowMessage(message, buttonText);
+        if (pause)
+        {
+            Debug.Log("Pausing?");
+            Time.timeScale = 0f;
+        }
     }
 
     /// <summary>

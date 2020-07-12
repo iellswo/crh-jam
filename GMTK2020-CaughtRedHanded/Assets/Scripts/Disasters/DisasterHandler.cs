@@ -84,10 +84,15 @@ public class DisasterHandler : MonoBehaviour
         _timeSinceLastClear += Time.deltaTime;
         timeRemaining -= Time.deltaTime;
         eta.UpdateETA(Mathf.RoundToInt(timeRemaining));
-        if (timeRemaining <= 0)
+        if (timeRemaining <= 0 && !_victMessageShown)
         {
             Debug.Log("Victory!");
-            //TODO: Win.
+            Victory();
+        }
+        else if (timeRemaining <= -0.5f)
+        {
+            Debug.Log("End");
+            Victory();
         }
 
         if (curStepIndex < programSteps.Length && _timeInCurrentStep > curStep.length)
@@ -151,14 +156,15 @@ public class DisasterHandler : MonoBehaviour
     {
         if (!_victMessageShown)
         {
+            Debug.Log("Showing victory message");
             _victMessageShown = true;
-            messageCommanding.ShowOutsiderMessage(victMessage, "Hooray?");
-            Time.timeScale = 0;
+            messageCommanding.ShowOutsiderMessage(victMessage, "Hooray?", true);
         }
         else
         {
+            Debug.Log("Going to victory screen");
             Cursor.visible = true;
-            GlobalFunctions.LoadScene("VictoryScene");
+            GlobalFunctions.LoadScene("RealVictoryScene");
         }
     }
 

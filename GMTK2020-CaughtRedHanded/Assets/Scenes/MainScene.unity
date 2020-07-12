@@ -1389,7 +1389,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f2d988c84a512f44882acceb6599dfe6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9d7ad4dbeeda60b4db63126f79c12ba3, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -1887,38 +1887,38 @@ MonoBehaviour:
   programSteps:
   - length: 100
     disastersAllowed: 3
-    minInterval: 5
-    maxInterval: 10
+    minInterval: 4
+    maxInterval: 7
     clearQueue: 0
-  - length: 100
+  - length: 55
     disastersAllowed: 6
     minInterval: 3
     maxInterval: 15
     clearQueue: 22
-  - length: 60
-    disastersAllowed: 10
-    minInterval: 3
-    maxInterval: 6
-    clearQueue: 0
-  - length: 120
+  - length: 40
     disastersAllowed: -1
     minInterval: 5
     maxInterval: 20
     clearQueue: 60
-  - length: 120
+  - length: 35
     disastersAllowed: -1
-    minInterval: 3
+    minInterval: 5
+    maxInterval: 20
+    clearQueue: 60
+  - length: 25
+    disastersAllowed: -1
+    minInterval: 6
     maxInterval: 10
     clearQueue: 60
-  - length: 120
+  - length: 15
+    disastersAllowed: -1
+    minInterval: 1
+    maxInterval: 3
+    clearQueue: 60
+  - length: 30
     disastersAllowed: -1
     minInterval: 3
     maxInterval: 6
-    clearQueue: 60
-  - length: 120
-    disastersAllowed: -1
-    minInterval: 1
-    maxInterval: 4
     clearQueue: 60
   eta: {fileID: 846705062}
   messageCommanding: {fileID: 310945000}
@@ -2110,8 +2110,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -90.7, y: 119}
-  m_SizeDelta: {x: 147.73096, y: 48.58667}
+  m_AnchoredPosition: {x: -67.5, y: 98}
+  m_SizeDelta: {x: 134.95392, y: 48.58667}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &846705060
 MonoBehaviour:

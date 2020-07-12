@@ -13,11 +13,15 @@ public class GooseGun : MonoBehaviour
 
     private SpriteRenderer _spriteRenderer;
 
+    private AudioSource _audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         _spriteRenderer =new List<SpriteRenderer>(GetComponentsInChildren<SpriteRenderer>()).Find(_rend => _rend.CompareTag($"EngineGoose"));
         interval = initInterval;
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -40,6 +44,8 @@ public class GooseGun : MonoBehaviour
             newGoose.cagedGoose = _spriteRenderer;
             GlobalData.looseGoose = true;
             _spriteRenderer.enabled = false;
+
+            _audioSource.Play();
         }
     }
 }

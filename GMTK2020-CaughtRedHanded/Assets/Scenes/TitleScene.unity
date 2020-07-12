@@ -485,7 +485,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: game title here
+  m_Text: AHH! It's on fire!
 --- !u!222 &411454110
 CanvasRenderer:
   m_ObjectHideFlags: 0

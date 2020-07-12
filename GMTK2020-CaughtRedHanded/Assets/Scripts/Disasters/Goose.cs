@@ -52,9 +52,10 @@ public class Goose : Problem
     }
 
     private void OnMouseOver(){
-        if (SolutionCode != GlobalData.activeTool){
+        if (GlobalData.activeTool != "" && SolutionCode != GlobalData.activeTool){
             Debug.Log("Goose Stole " + GlobalData.activeTool);
-            FindObjectOfType<ToolTray>().heldTool.PutDownTool();
+            if (FindObjectOfType<ToolTray>().heldTool != null)
+                FindObjectOfType<ToolTray>().heldTool.PutDownTool();
         }
     }
 }

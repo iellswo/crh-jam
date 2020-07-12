@@ -875,7 +875,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 6e43ab9ad467502488d9a62c09e8aa32, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eda905024c1587d47940d50c390b844a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1549,6 +1549,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AlarmLight
       objectReference: {fileID: 0}
+    - target: {fileID: 8455772742148700744, guid: aad3d7bd61337eb45920213f076eb55e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8455772742148700751, guid: aad3d7bd61337eb45920213f076eb55e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1869,6 +1874,7 @@ MonoBehaviour:
   breachDamage: 5
   fuseDamage: 5
   wireDamage: 20
+  coolantDamageMax: 35
 --- !u!1001 &1438770998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2061,6 +2067,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AlarmButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850280848343319477, guid: 3eaa52cf3dc50724cb8a92037e563937,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1850280848343319478, guid: 3eaa52cf3dc50724cb8a92037e563937,
         type: 3}

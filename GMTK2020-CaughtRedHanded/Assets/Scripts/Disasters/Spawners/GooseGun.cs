@@ -23,8 +23,8 @@ public class GooseGun : MonoBehaviour
     void Update()
     {
         if ((interval <= 0 || Input.GetKeyDown(KeyCode.T)) && GlobalData.looseGoose == false){
-            goose = Instantiate(goose, transform.position, Quaternion.identity);
-            goose.cagedGoose = _spriteRenderer;
+            Goose newGoose = Instantiate(goose, transform.position, Quaternion.identity);
+            newGoose.cagedGoose = _spriteRenderer;
             GlobalData.looseGoose = true;
             _spriteRenderer.enabled = false;
             interval = Random.Range(minInterval, maxInterval);

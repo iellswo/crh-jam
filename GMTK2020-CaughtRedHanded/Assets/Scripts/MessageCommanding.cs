@@ -25,6 +25,9 @@ public class MessageCommanding : MonoBehaviour
     public float maxInterlude = 20;
     private float interlude;
 
+    //Audio
+    private AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +42,8 @@ public class MessageCommanding : MonoBehaviour
             awaitingFirstEvent[i] = true;
 
         interlude = Random.Range(minInterlude, maxInterlude);
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     /// <summary>
@@ -136,6 +141,7 @@ public class MessageCommanding : MonoBehaviour
             ShowMessage(messageToShow, "Alright...");
         else
             messageBacklog.Enqueue(new BackloggedMessage(messageToShow, true));
+        Time.timeScale = 0f;
     }
 
     /// <summary>
@@ -157,16 +163,19 @@ public class MessageCommanding : MonoBehaviour
     /// <param name="buttonText">Text in the dismiss button</param>
     private void ShowMessage(string message, string buttonText)
     {
-            messageBoxInstance = Instantiate(messageBoxPrefab, new Vector3(0, 0, 0), Quaternion.identity);
-            messageBoxInstance.transform.parent = canvas.transform;
-            messageBoxInstance.transform.localPosition = new Vector3(0, 0, 0);
+        messageBoxInstance = Instantiate(messageBoxPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        messageBoxInstance.transform.parent = canvas.transform;
+        messageBoxInstance.transform.localPosition = new Vector3(0, 0, 0);
 
-            MessageBox messageBoxData = messageBoxInstance.GetComponent<MessageBox>();
-            messageBoxData.messageCommander = this;
-            messageBoxData.message.text = message;
-            messageBoxData.buttonText.text = buttonText;
+        MessageBox messageBoxData = messageBoxInstance.GetComponent<MessageBox>();
+        messageBoxData.messageCommander = this;
+        messageBoxData.message.text = message;
+        messageBoxData.buttonText.text = buttonText;
 
-            messageIsVisible = true;
+        messageIsVisible = true;
+
+        if (audioSource != null)
+            audioSource.Play();
     }
 
     /// <summary>
@@ -187,12 +196,16 @@ public class MessageCommanding : MonoBehaviour
         Destroy(messageBoxInstance);
         messageBoxInstance = null;
         messageIsVisible = false;
+        Time.timeScale = 1f;
 
         if (messageBacklog.Count > 0)
         {
             BackloggedMessage nextInQueue = messageBacklog.Peek();
             if (nextInQueue.isTutorial)
+            {
                 ShowMessage(nextInQueue.text, "Alright...");
+                Time.timeScale = 0f;
+            }
             else
                 ShowMessage(nextInQueue.text, "Go away!");
             messageBacklog.Dequeue();

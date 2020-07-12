@@ -56,6 +56,10 @@ public class HeatTracking : MonoBehaviour
         heat += GlobalData.cutWires * wireDamage;
         heat += CalculateCoolantHeat();
         //Other issues should be added here to the count
+
+        if (heat < 0)
+            heat = 0;
+
         return heat;
     }
 

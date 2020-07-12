@@ -32,6 +32,9 @@ public class DisasterHandler : MonoBehaviour
     public ProgramStep[] programSteps;
 
     public ETAText eta;
+    public MessageCommanding messageCommanding;
+
+    private string victMessage = "Looks like we made it, sport.  And by the skin of our teeth too!  Come on up to the bridge, you've earned some shore leave, first round is on old Niat!";
 
     private float timeRemaining;
 
@@ -53,6 +56,8 @@ public class DisasterHandler : MonoBehaviour
     
     private float _interval;
 
+    private bool _victMessageShown;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -67,6 +72,7 @@ public class DisasterHandler : MonoBehaviour
         _areClearing = curStep.clearQueue > 0f;
 
         timeRemaining = GetTotalTime();
+        _victMessageShown = false;
     }
 
     // Update is called once per frame
@@ -139,6 +145,21 @@ public class DisasterHandler : MonoBehaviour
         });
 
         DisastersInQueue += 1;
+    }
+
+    private void Victory()
+    {
+        if (!_victMessageShown)
+        {
+            _victMessageShown = true;
+            messageCommanding.ShowOutsiderMessage(victMessage, "Hooray?");
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Cursor.visible = true;
+            GlobalFunctions.LoadScene("VictoryScene");
+        }
     }
 
     private float GetNewInterval()

@@ -1921,6 +1921,7 @@ MonoBehaviour:
     maxInterval: 4
     clearQueue: 60
   eta: {fileID: 846705062}
+  messageCommanding: {fileID: 310945000}
   DisastersInQueue: 0
   ActiveDisasters: 0
 --- !u!4 &789088673

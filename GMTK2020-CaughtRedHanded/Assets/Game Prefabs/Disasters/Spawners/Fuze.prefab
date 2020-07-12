@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8495727938494878070}
   - component: {fileID: 8495727938494878069}
   - component: {fileID: 8495727938494878068}
+  - component: {fileID: 7966024202339058492}
   m_Layer: 0
   m_Name: Fuze
   m_TagString: Untagged
@@ -101,3 +102,14 @@ MonoBehaviour:
   burntOutSprite: {fileID: 21300000, guid: 69af23f2afcb8e24483eab8fc60ca075, type: 3}
   hazard: {fileID: -2585102350600562476, guid: 304729663ef6efb4c8557fc66df4af0e, type: 3}
   _break: {fileID: 0}
+--- !u!210 &7966024202339058492
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8495727938494878027}
+  m_Enabled: 1
+  m_SortingLayerID: -1304664423
+  m_SortingLayer: 2
+  m_SortingOrder: 0

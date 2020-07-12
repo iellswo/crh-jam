@@ -719,6 +719,23 @@ RectTransform:
   m_AnchoredPosition: {x: 1.693, y: 0.376}
   m_SizeDelta: {x: 8.102085, y: 9.08732}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &418420005 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8495727938494878027, guid: 60a4acd1ef66ba740b44590b37a171a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1420627139}
+  m_PrefabAsset: {fileID: 0}
+--- !u!210 &418420006
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418420005}
+  m_Enabled: 1
+  m_SortingLayerID: -1304664423
+  m_SortingLayer: 2
+  m_SortingOrder: 0
 --- !u!1001 &481317654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1680,6 +1697,23 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!1 &996827940 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8495727938494878027, guid: 60a4acd1ef66ba740b44590b37a171a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 494647065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!210 &996827941
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996827940}
+  m_Enabled: 1
+  m_SortingLayerID: -1304664423
+  m_SortingLayer: 2
+  m_SortingOrder: 0
 --- !u!1001 &1012512755
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3087,6 +3121,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1634703829}
   m_CullTransparentMesh: 0
+--- !u!1 &1678040638 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8495727938494878027, guid: 60a4acd1ef66ba740b44590b37a171a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1830823897}
+  m_PrefabAsset: {fileID: 0}
+--- !u!210 &1678040639
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678040638}
+  m_Enabled: 1
+  m_SortingLayerID: -1304664423
+  m_SortingLayer: 2
+  m_SortingOrder: 0
 --- !u!1001 &1712480691
 PrefabInstance:
   m_ObjectHideFlags: 0

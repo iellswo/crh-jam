@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1565169968146624766}
   - component: {fileID: 1795313670551416489}
   - component: {fileID: 2898372644484561321}
+  - component: {fileID: -5349882022363782487}
   m_Layer: 0
   m_Name: SelfCuttingWire
   m_TagString: Untagged
@@ -99,3 +100,14 @@ MonoBehaviour:
   maxInterlude: 30
   hazard: {fileID: 7169510597429306118, guid: 4839ad393f5839c4db8f20b53e8e6b53, type: 3}
   _break: {fileID: 0}
+--- !u!210 &-5349882022363782487
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3636336366758276213}
+  m_Enabled: 1
+  m_SortingLayerID: -1304664423
+  m_SortingLayer: 2
+  m_SortingOrder: 0

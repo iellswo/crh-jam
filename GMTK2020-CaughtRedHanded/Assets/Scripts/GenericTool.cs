@@ -10,6 +10,8 @@ public class GenericTool : MonoBehaviour
     public ToolTray toolTray; //Tool bar
     public int slot; //Tool slot occupied by this tool
 
+    public float scaleUpFactor = 1.5f;
+
     public ToolParticleController particleController;
 
     //Audio clips
@@ -83,6 +85,7 @@ public class GenericTool : MonoBehaviour
             toolTray.SetHeldTool(this);
             Cursor.visible = false;
             image.raycastTarget = false;
+            transform.localScale = new Vector3(scaleUpFactor, scaleUpFactor, 1);
         }
     }
 
@@ -98,6 +101,7 @@ public class GenericTool : MonoBehaviour
         SnapToPosition();
         Cursor.visible = true;
         image.raycastTarget = true;
+        transform.localScale = new Vector3(1, 1, 1);
     }
 
     /// <summary>

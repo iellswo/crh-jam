@@ -268,6 +268,16 @@ PrefabInstance:
       propertyPath: toolName
       value: wire
       objectReference: {fileID: 0}
+    - target: {fileID: 7828335477259759161, guid: 7334ae6f566a0394dad320eeacb7a9fa,
+        type: 3}
+      propertyPath: mouseOffset
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828335477259759161, guid: 7334ae6f566a0394dad320eeacb7a9fa,
+        type: 3}
+      propertyPath: scaleUpFactor
+      value: 2.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7828335477259759166, guid: 7334ae6f566a0394dad320eeacb7a9fa,
         type: 3}
       propertyPath: m_Color.r
@@ -598,7 +608,7 @@ PrefabInstance:
     - target: {fileID: 636576510160801988, guid: 4f80888684ddbda4ab969a02dac0e137,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 636576510160801988, guid: 4f80888684ddbda4ab969a02dac0e137,
         type: 3}
@@ -922,7 +932,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.1981132, g: 0.1981132, b: 0.1981132, a: 0}
+  m_BackGroundColor: {r: 0.37647063, g: 0.3647059, b: 0.36078432, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1014,7 +1024,7 @@ PrefabInstance:
     - target: {fileID: 1565169968146624766, guid: 5aa61324a788d054abc9f2a60860483b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1565169968146624766, guid: 5aa61324a788d054abc9f2a60860483b,
         type: 3}
@@ -1513,6 +1523,11 @@ PrefabInstance:
       propertyPath: toolName
       value: smacker
       objectReference: {fileID: 0}
+    - target: {fileID: 7828335477259759161, guid: 7334ae6f566a0394dad320eeacb7a9fa,
+        type: 3}
+      propertyPath: scaleUpFactor
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7828335477259759166, guid: 7334ae6f566a0394dad320eeacb7a9fa,
         type: 3}
       propertyPath: m_Sprite
@@ -1753,7 +1768,7 @@ PrefabInstance:
     - target: {fileID: 8948502057931599085, guid: f5b20a81362f658468166371c9a9538a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8948502057931599085, guid: f5b20a81362f658468166371c9a9538a,
         type: 3}
@@ -2633,6 +2648,11 @@ PrefabInstance:
         type: 3}
       propertyPath: mouseOffset
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828335477259759161, guid: 7334ae6f566a0394dad320eeacb7a9fa,
+        type: 3}
+      propertyPath: scaleUpFactor
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7828335477259759166, guid: 7334ae6f566a0394dad320eeacb7a9fa,
         type: 3}
@@ -7416,7 +7436,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1774416600
 MonoBehaviour:
@@ -7494,7 +7514,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1933731227
 GameObject:
@@ -7593,7 +7613,7 @@ RectTransform:
   - {fileID: 1198451209}
   - {fileID: 310944999}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8162,6 +8182,11 @@ PrefabInstance:
       propertyPath: particleController
       value: 
       objectReference: {fileID: 1774416600}
+    - target: {fileID: 7828335477259759161, guid: 7334ae6f566a0394dad320eeacb7a9fa,
+        type: 3}
+      propertyPath: scaleUpFactor
+      value: 2.8
+      objectReference: {fileID: 0}
     - target: {fileID: 7828335477259759166, guid: 7334ae6f566a0394dad320eeacb7a9fa,
         type: 3}
       propertyPath: m_Sprite

@@ -33,6 +33,9 @@ public class DisasterHandler : MonoBehaviour
 
     public ETAText eta;
     public MessageCommanding messageCommanding;
+    public AudioClip victJingle;
+
+    private AudioSource audioSource;
 
     private string victMessage = "Looks like we made it, sport.  And by the skin of our teeth too!  Come on up to the bridge, you've earned some shore leave, first round is on old Niat!";
 
@@ -73,6 +76,8 @@ public class DisasterHandler : MonoBehaviour
 
         timeRemaining = GetTotalTime();
         _victMessageShown = false;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -157,6 +162,7 @@ public class DisasterHandler : MonoBehaviour
         if (!_victMessageShown)
         {
             Debug.Log("Showing victory message");
+            audioSource.PlayOneShot(victJingle);
             _victMessageShown = true;
             messageCommanding.ShowOutsiderMessage(victMessage, "Hooray?", true);
         }

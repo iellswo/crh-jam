@@ -20,4 +20,5 @@ public class GlobalData
     public static int cutWires = 0;
 
     public static string activeTool;
+    public static bool looseGoose;
 }

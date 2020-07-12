@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Goose : MonoBehaviour
+public class Goose : Problem
 {
     private int direction = 1;
 
@@ -42,5 +42,16 @@ public class Goose : MonoBehaviour
         }
         _rigidbody2D.velocity = new Vector2(velX, velY);
         interval -= Time.deltaTime;
+    }
+
+    public override void Repair(){
+        Destroy(gameObject);
+    }
+
+    private void OnMouseOver(){
+        if (SolutionCode != GlobalData.activeTool){
+            Debug.Log("Goose Stole " + GlobalData.activeTool);
+            FindObjectOfType<ToolTray>().heldTool.PutDownTool();
+        }
     }
 }

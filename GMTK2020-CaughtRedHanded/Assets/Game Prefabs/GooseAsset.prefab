@@ -143,6 +143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1afc6c7ef992ede4e83784eb0c0af54c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RepairSound: {fileID: 0}
+  SolutionCode: smacker
   speed: 20
   maxWidth: 10
   minInterval: 1

@@ -1613,12 +1613,12 @@ MonoBehaviour:
   initialInterval: 8
   programSteps:
   - length: 100
-    disastersAllowed: 1
+    disastersAllowed: 3
     minInterval: 5
     maxInterval: 10
     clearQueue: 0
   - length: 100
-    disastersAllowed: 2
+    disastersAllowed: 6
     minInterval: 3
     maxInterval: 15
     clearQueue: 22
@@ -1628,9 +1628,24 @@ MonoBehaviour:
     maxInterval: 6
     clearQueue: 0
   - length: 120
-    disastersAllowed: 5
-    minInterval: 3
+    disastersAllowed: -1
+    minInterval: 5
     maxInterval: 20
+    clearQueue: 60
+  - length: 120
+    disastersAllowed: -1
+    minInterval: 3
+    maxInterval: 10
+    clearQueue: 60
+  - length: 120
+    disastersAllowed: -1
+    minInterval: 3
+    maxInterval: 6
+    clearQueue: 60
+  - length: 120
+    disastersAllowed: -1
+    minInterval: 1
+    maxInterval: 4
     clearQueue: 60
   DisastersInQueue: 0
   ActiveDisasters: 0

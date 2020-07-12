@@ -7,12 +7,21 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="ControlsShower.cs" t="Include" />
+          <e p="Coolant" t="Include">
+            <e p="CoolantController.cs" t="Include" />
+            <e p="Leak.cs" t="Include" />
+            <e p="LevelController.cs" t="Include" />
+            <e p="Lever.cs" t="Include" />
+            <e p="TowerSpriteManager.cs" t="Include" />
+          </e>
           <e p="Disasters" t="Include">
             <e p="Alarm.cs" t="Include" />
             <e p="AlarmLight.cs" t="Include" />
             <e p="BrokenWire.cs" t="Include" />
             <e p="BurningFuze.cs" t="Include" />
             <e p="DeadFuze.cs" t="Include" />
+            <e p="DisasterHandler.cs" t="Include" />
             <e p="EmptyFuze.cs" t="Include" />
             <e p="FanSpark.cs" t="Include" />
             <e p="Fire.cs" t="Include" />
@@ -43,6 +52,7 @@
           <e p="ToolTray.cs" t="Include" />
         </e>
         <e p="Shaders" t="Include">
+          <e p="ClipArea.shader" t="Include" />
           <e p="ParticleDissolveAlpha.shader" t="Include" />
         </e>
       </e>

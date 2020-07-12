@@ -696,7 +696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef0bcb4743f8e2a49bcf87faa37178fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initInterlude: 1
+  initInterlude: 0
   minInterlude: 6
   maxInterlude: 12
   hazard: {fileID: 1696871421614907377, guid: 89221c539f322814c95b84526cbc41b2, type: 3}
@@ -2832,7 +2832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f26fc3b8da5775b4e9bff44f6aa8b0fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initInterlude: 25
+  initInterlude: 0
   minInterlude: 5
   maxInterlude: 20
   hazard: {fileID: 1696871421614907377, guid: 2bfd44fa1e7b93c459fda0db1970a3fc, type: 3}
@@ -8667,6 +8667,11 @@ PrefabInstance:
         type: 3}
       propertyPath: initInterlude
       value: 85
+      objectReference: {fileID: 0}
+    - target: {fileID: 6181333377697630480, guid: d05f90b686a61fc46b879f4e1c7815d2,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d05f90b686a61fc46b879f4e1c7815d2, type: 3}

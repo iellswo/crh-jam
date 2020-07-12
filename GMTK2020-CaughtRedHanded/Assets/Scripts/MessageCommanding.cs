@@ -170,6 +170,16 @@ public class MessageCommanding : MonoBehaviour
     }
 
     /// <summary>
+    /// Displays a message passed by outside object
+    /// </summary>
+    /// <param name="message">Text of the message</param>
+    /// <param name="buttonText">Text on the button to dismiss message</param>
+    public void ShowOutsiderMessage(string message, string buttonText)
+    {
+        ShowMessage(message, buttonText);
+    }
+
+    /// <summary>
     /// Destroys the message window, and loads new message from a queue if needed
     /// </summary>
     public void DismissMessage()

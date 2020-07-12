@@ -17,11 +17,16 @@ public class FuzeBreaker : MonoBehaviour
     private float _interlude;
     public Problem _break;
 
+    private AudioSource _audioSource;
+    public AudioClip breakAudio;
+    public AudioClip removeAudio;
+
 
     // Start is called before the first frame update
     void Start()
     {
         _interlude = initInterlude;
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -49,6 +54,7 @@ public class FuzeBreaker : MonoBehaviour
             fuze.fuzeBreaker  = this;
             _break = fuze;
             GlobalData.blownFuzes++;
+            _audioSource.PlayOneShot(breakAudio);
         }
     }
 

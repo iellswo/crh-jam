@@ -8,8 +8,6 @@ public class Alarm : MonoBehaviour {
     public bool active;
     public float maxInterval = 500;
     public float minInterval = 100;
-    private int lightFlip = 0;
-    public AlarmLight Alarmlight;
     void Start()
     {
         // GlobalData.alarmCountDown  = Random.Range(minInterval,maxInterval);
@@ -21,27 +19,18 @@ public class Alarm : MonoBehaviour {
     void Update()
     {
         if(timer < 0){
-            active = true;
+            GlobalData.alarmOn = true;
         }else{
-            timer--;
-        }
-
-        if(active){
-            lightFlip++;
-            if(lightFlip % 30 ==0){
-                Alarmlight.flipColor();
-                Alarmlight.playAlarm();
-            }
+            timer -= Time.deltaTime;
         }
        // if(Input.GetMouseButtonDown(0)) Debug.Log("Pressed left click.");
         // Debug.Log("Don't Push");
 
     }
-    public void Clicked() {
-        if(active){
+    public void OnMouseDown() {
+        if(GlobalData.alarmOn){
             timer = Random.Range(minInterval,maxInterval);
-            active = false;
-            Alarmlight.resetColor();
+            GlobalData.alarmOn = false;
         }else{
             Debug.Log("Don't Push");
         }

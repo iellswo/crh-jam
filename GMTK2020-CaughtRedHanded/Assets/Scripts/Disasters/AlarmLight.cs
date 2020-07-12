@@ -2,39 +2,47 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-[RequireComponent (typeof (Image))]
 public class AlarmLight : MonoBehaviour
 {   
     public Color32 c1 = new Color32(255,0,0,255);
     public Color32 c2 = new Color32(255,255,0,255);
     bool flip = true;
-    Image image;
+    float cTimer = 0;
+    float alarmDelay=.5f;
+    SpriteRenderer sprite;
     public AudioSource audioSource;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        image = GetComponent<Image>();
+       sprite = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        cTimer += Time.deltaTime;
+        if(GlobalData.alarmOn&& cTimer > alarmDelay){
+            flipColor();
+            playAlarm();
+            cTimer = 0.0f;
+        }else{
+            resetColor();
+        }
     }
 
     public void flipColor(){
             if(flip){
-                image.color = c1;
+                sprite.color = c1;
             }else{
-                image.color = c2;
+                sprite.color = c2;
             }
             flip = !flip;
     }
     public void resetColor(){
-        image.color = new Color32(255,255,255,255);
+        sprite.color = new Color32(255,255,255,255);
     }
     public void playAlarm(){
         audioSource.Play();

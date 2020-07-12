@@ -8,15 +8,15 @@ public class GlobalTexts
 {
     private static List<string> tutorialMessages = new List<string> {
         "Yello! I’s Captain Niat Pac. Welcome aboard the UGLY Martian, our mission’s ta collect scientific data as mysterious as the dark side of the moon. Which is why we’re goin’ to--you guessed it--Mercury, to accumulate luminating data for the room-in-ating scientists back home.",
-        "Now, I understan’ yer a technical genie, but this ship ‘ere’s brand new. Just ta be safe, though, I’ll check the monitors for ya and pop in any reminders ya’d need. Good luck, may the solar wind blow ever in your flavor.",
-        "Everything changed when the fire—fire? Fire! Get the extinguisher, quick, the smoke’s- *cough* getting into the ventilation *cough* *cough*",
-        "Now, I’m no materials scientist, but like my father Major Rojam used to say: Hull breaches and tape go together like college kids and dollar menus. Duck tape. Use it.",
-        "Wha- how’d Howie get in there? Well it’s a good thing you let me decide the tools to bring on this mission, because I packed the goose smacker just in case.",
+        "Now listen well, don’t let that engine get too hot. Just keep it cool for as looong as possible… but take a break if you need to. Good luck, stay hydrated, and I’ll check in later.",
+        "Everything changed when the fire—fire? Fire! Get the extinguisher, quick, the smoke’s- *cough* getting into the ventilation *cough*",
+        "I think we’re being shot at by the rock aliens. Tape up any seals you see, as a favor to me.",
+        "Howie? I’ve got two words for you: Goose smacker. Bright red, can’t miss it. She’ll knock your tools out of your hand, clever girl.",
         "Uh, you didn’t happen to blow a fuse in the electrical box, didja? If you don’t mind, Madam Adam is complainin’ that there’s no heat in the showers, so please put out them flames and replace it.",
-        "It’s awful dark up here, did a wire run into a problem on the way? I don’t have anything nearly as terrifying as you to chase it away.",
-        "Did you know that screwdrivers were invented during the middle ages on Earth? Go figure, I thought the martians brought em t’us. Oh, you got a screw loose in the vent, partner.",
-        "placeholder alarm tutorial",
-        "placeholder coolant tower tutorial"
+        "It’s awful dark up here, did a wire run into a problem on the way? If you don’t replace it soon, aliens might start to pop out of unexpected places.",
+        "Oh, your fan is screwed. Or, it’s never screwed enough? Thoughts for later.",
+        "That alarm’s like my child: loud and pointless. And just like him, all you got to do is push the big red button.",
+        "Ah, the coolant’s leaking. Flick the lever to drain the water until the leaking stops, then tape it up. Page 501, UGLY Manual."
     };
 
     private static List<string> displayedTutorialMessagges = new List<string>();

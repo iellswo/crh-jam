@@ -2353,7 +2353,7 @@ PrefabInstance:
         type: 3}
       propertyPath: useSound
       value: 
-      objectReference: {fileID: 8300000, guid: d4a00d6209c922544ac49d92cd33b107, type: 3}
+      objectReference: {fileID: 8300000, guid: cf0c1fa8d45d68b41803d65c9f49aef8, type: 3}
     - target: {fileID: 7828335477259759161, guid: 7334ae6f566a0394dad320eeacb7a9fa,
         type: 3}
       propertyPath: toolName
